@@ -24,7 +24,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Local Stylesheet (Processed by Vite with Tailwind) -->
     <link rel="stylesheet" href="/style.css" />
@@ -85,13 +85,13 @@
         <!-- Right Side Controls (Theme + CTA) -->
         <div class="hidden md:flex items-center gap-4">
           <!-- Theme Toggle Button -->
-          <button id="theme-toggle" class="p-2.5 rounded-xl border border-[var(--card-border)] hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-[var(--text-primary)]" aria-label="Toggle light/dark theme">
+          <button class="theme-toggle-btn p-2.5 rounded-xl border border-[var(--card-border)] hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-[var(--text-primary)]" aria-label="Toggle light/dark theme">
             <!-- Sun Icon (visible in dark mode) -->
-            <svg id="sun-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="sun-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
             <!-- Moon Icon (visible in light mode, hidden by default in script.js) -->
-            <svg id="moon-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="moon-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
           </button>
@@ -104,8 +104,13 @@
         <!-- Mobile Controls Wrapper -->
         <div class="flex items-center gap-3 md:hidden">
           <!-- Theme Toggle (Mobile) -->
-          <button id="theme-toggle" class="p-2 rounded-lg border border-[var(--card-border)] text-[var(--text-primary)]" onclick="document.getElementById('theme-toggle').click()">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button class="theme-toggle-btn p-2 rounded-lg border border-[var(--card-border)] text-[var(--text-primary)] hover:border-blue-500/50 hover:bg-blue-500/5 transition-all" aria-label="Toggle light/dark theme">
+            <!-- Sun Icon (visible in dark mode) -->
+            <svg class="sun-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <!-- Moon Icon (visible in light mode) -->
+            <svg class="moon-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
           </button>
@@ -362,6 +367,175 @@
             </p>
           </div>
 
+        </div>
+
+        <!-- Tools & Tech Ribbon -->
+        <div class="mt-20 pt-10 border-t border-[var(--card-border)] reveal">
+          <div class="text-center mb-10">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-blue-500 font-mono">
+              Our Creative Tools & Technology Ecosystem
+            </h4>
+            <p class="text-sm text-[var(--text-secondary)] mt-1 opacity-80">
+              Leveraging advanced industry-standard software to build premium high-performance web systems
+            </p>
+          </div>
+          
+          <!-- Infinite Scrolling Ribbon -->
+          <div class="relative w-full overflow-hidden py-5 bg-[var(--card-bg)] border-y border-[var(--card-border)] rounded-2xl backdrop-blur-sm">
+            <!-- Left & Right Shadows to fade out items -->
+            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[var(--bg-gradient-start)] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[var(--bg-gradient-start)] to-transparent z-10 pointer-events-none"></div>
+            
+            <div class="marquee-track flex gap-12 items-center">
+              <!-- Set 1 -->
+              <div class="flex gap-12 items-center shrink-0">
+                <!-- Figma -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 22a5 5 0 1 0 0-10H7v5a5 5 0 1 0 5 5z"/>
+                    <path d="M12 12a5 5 0 1 0 0-10H7v5a5 5 0 1 0 5 5z"/>
+                    <path d="M17 12a5 5 0 1 0-5-5v5h5z"/>
+                  </svg>
+                  <span>Figma</span>
+                </div>
+                <!-- React -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(30 12 12)"/>
+                    <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(90 12 12)"/>
+                    <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(150 12 12)"/>
+                    <circle cx="12" cy="12" r="1"/>
+                  </svg>
+                  <span>React</span>
+                </div>
+                <!-- Tailwind CSS -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.24 12.24a6 6 0 0 0-8.49 0L5 19h14.5a1.5 1.5 0 0 0 1.5-1.5v-5.26z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.76 11.76a6 6 0 0 0 8.49 0L19 5H4.5A1.5 1.5 0 0 0 3 6.5v5.26z" />
+                  </svg>
+                  <span>Tailwind CSS</span>
+                </div>
+                <!-- TypeScript -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <div class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold font-mono">TS</div>
+                  <span>TypeScript</span>
+                </div>
+                <!-- Vite -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span>Vite</span>
+                </div>
+                <!-- Next.js -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-[var(--text-primary)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" d="M8 16V8l8 8" />
+                  </svg>
+                  <span>Next.js</span>
+                </div>
+                <!-- Framer Motion -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-pink-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5L19.5 12L12 19.5L4.5 12L12 4.5Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.5L14.5 12L12 14.5L9.5 12L12 9.5Z" />
+                  </svg>
+                  <span>Motion</span>
+                </div>
+                <!-- Webflow -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-4a4 4 0 00-4-4H5a2 2 0 00-2 2v6" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21v-8a4 4 0 00-4-4H9" />
+                  </svg>
+                  <span>Webflow</span>
+                </div>
+                <!-- GitHub -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-[var(--text-primary)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </div>
+              </div>
+              
+              <!-- Set 2 (Identical Duplicate) -->
+              <div class="flex gap-12 items-center shrink-0">
+                <!-- Figma -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 22a5 5 0 1 0 0-10H7v5a5 5 0 1 0 5 5z"/>
+                    <path d="M12 12a5 5 0 1 0 0-10H7v5a5 5 0 1 0 5 5z"/>
+                    <path d="M17 12a5 5 0 1 0-5-5v5h5z"/>
+                  </svg>
+                  <span>Figma</span>
+                </div>
+                <!-- React -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(30 12 12)"/>
+                    <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(90 12 12)"/>
+                    <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(150 12 12)"/>
+                    <circle cx="12" cy="12" r="1"/>
+                  </svg>
+                  <span>React</span>
+                </div>
+                <!-- Tailwind CSS -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.24 12.24a6 6 0 0 0-8.49 0L5 19h14.5a1.5 1.5 0 0 0 1.5-1.5v-5.26z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.76 11.76a6 6 0 0 0 8.49 0L19 5H4.5A1.5 1.5 0 0 0 3 6.5v5.26z" />
+                  </svg>
+                  <span>Tailwind CSS</span>
+                </div>
+                <!-- TypeScript -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <div class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold font-mono">TS</div>
+                  <span>TypeScript</span>
+                </div>
+                <!-- Vite -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span>Vite</span>
+                </div>
+                <!-- Next.js -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-[var(--text-primary)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" d="M8 16V8l8 8" />
+                  </svg>
+                  <span>Next.js</span>
+                </div>
+                <!-- Framer Motion -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-pink-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5L19.5 12L12 19.5L4.5 12L12 4.5Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.5L14.5 12L12 14.5L9.5 12L12 9.5Z" />
+                  </svg>
+                  <span>Motion</span>
+                </div>
+                <!-- Webflow -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-4a4 4 0 00-4-4H5a2 2 0 00-2 2v6" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21v-8a4 4 0 00-4-4H9" />
+                  </svg>
+                  <span>Webflow</span>
+                </div>
+                <!-- GitHub -->
+                <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
+                  <svg class="w-5 h-5 text-[var(--text-primary)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1065,13 +1239,8 @@
                   <div class="flex flex-col text-left space-y-2">
                     <label for="service" class="text-xs font-semibold text-[var(--text-secondary)]">Service Needed</label>
                     <select id="service" name="service" required class="w-full bg-[var(--bg-gradient-start)] border border-[var(--card-border)] rounded-xl px-4 py-3 text-sm text-[var(--text-secondary)] focus:outline-none focus:border-blue-500 transition-all">
-                      <option value="" disabled selected>Select service</option>
-                      <option value="Business Website">Business Website</option>
-                      <option value="Portfolio Website">Portfolio Website</option>
-                      <option value="Landing Page">Landing Page</option>
+                      <option value="Business Website" selected>Business Website</option>
                       <option value="E-commerce Website">E-commerce Website</option>
-                      <option value="Website Redesign">Website Redesign</option>
-                      <option value="SEO Setup">SEO Setup</option>
                     </select>
                   </div>
                   <!-- Budget Range -->

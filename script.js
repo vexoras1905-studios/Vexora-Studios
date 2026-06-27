@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- THEME TOGGLE (DARK / LIGHT) ---
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const sunIcon = document.getElementById('sun-icon');
-  const moonIcon = document.getElementById('moon-icon');
+  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  const sunIcons = document.querySelectorAll('.sun-icon');
+  const moonIcons = document.querySelectorAll('.moon-icon');
 
   // Initialize theme from local storage or system preference
   const savedTheme = localStorage.getItem('theme');
@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (theme === 'light') {
       document.documentElement.classList.add('light');
       localStorage.setItem('theme', 'light');
-      if (sunIcon) sunIcon.classList.add('hidden');
-      if (moonIcon) moonIcon.classList.remove('hidden');
+      sunIcons.forEach(icon => icon.classList.add('hidden'));
+      moonIcons.forEach(icon => icon.classList.remove('hidden'));
     } else {
       document.documentElement.classList.remove('light');
       localStorage.setItem('theme', 'dark');
-      if (sunIcon) sunIcon.classList.remove('hidden');
-      if (moonIcon) moonIcon.classList.add('hidden');
+      sunIcons.forEach(icon => icon.classList.remove('hidden'));
+      moonIcons.forEach(icon => icon.classList.add('hidden'));
     }
   }
 
@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme('dark');
   }
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
+  themeToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       const isCurrentlyLight = document.documentElement.classList.contains('light');
       setTheme(isCurrentlyLight ? 'dark' : 'light');
     });
-  }
+  });
 
   // --- MOBILE NAVIGATION MENU ---
   const mobileMenuToggleBtn = document.getElementById('mobile-menu-toggle');
