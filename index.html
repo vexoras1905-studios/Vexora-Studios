@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VEXORA Studios | Premium Web Design Agency</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="VEXORA Studios builds modern, fast, and responsive websites for businesses, creators, startups, and local brands. Elevate your brand with premium, accessible web experiences." />
+    <meta name="keywords" content="web design, web development, vexora studios, premium websites, business website, portfolio website, e-commerce, website redesign, SEO setup, startup website" />
+    <meta name="author" content="VEXORA Studios" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="VEXORA Studios | Premium Web Design Agency" />
+    <meta property="og:description" content="VEXORA Studios builds modern, fast, and responsive websites for businesses, creators, startups, and local brands." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://official.vexorastudios" />
+    <meta property="og:image" content="/assets/og-image.jpg" />
+
+    <!-- Favicon Placeholder (using SVG inline in modern browsers) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext y='70' x='20' font-family='sans-serif' font-size='70' font-weight='bold' fill='white'%3EV%3C/text%3E%3C/svg%3E" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Local Stylesheet (Processed by Vite with Tailwind) -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="selection:bg-blue-500/30 selection:text-white">
+
+    <!-- 1. LOADING SCREEN -->
+    <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#020617] transition-opacity duration-500">
+      <div class="relative flex flex-col items-center gap-4">
+        <!-- Logo Icon with pulsating glow -->
+        <div class="relative">
+          <div class="absolute inset-0 bg-blue-600 rounded-2xl blur-xl opacity-60 animate-pulse"></div>
+          <div class="relative w-16 h-16 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-2xl flex items-center justify-center font-bold text-2xl text-white shadow-xl shadow-blue-500/20">
+            V
+          </div>
+        </div>
+        <!-- Logo Text with loading gradient -->
+        <div class="text-center mt-4">
+          <h2 class="text-xl font-bold font-['Space_Grotesk'] tracking-wider text-white uppercase">VEXORA <span class="text-blue-500">Studios</span></h2>
+          <p class="text-xs text-slate-400 mt-1 tracking-widest uppercase">Digital Craftsmanship</p>
+        </div>
+        <!-- Progress Bar Indicator -->
+        <div class="w-36 h-0.5 bg-slate-800 rounded-full mt-2 overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-blue-500 to-indigo-500 w-2/3 rounded-full animate-infinite"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background Decoration Glows -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+
+    <!-- 2. NAVBAR -->
+    <header class="sticky top-0 z-40 w-full border-b border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <!-- Brand Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-xl flex items-center justify-center font-bold text-lg text-white transition-transform duration-300 group-hover:scale-105">
+            V
+          </div>
+          <span class="font-['Space_Grotesk'] font-bold text-xl tracking-tight uppercase text-[var(--text-primary)]">
+            Vexora<span class="text-blue-500">Studios</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#home" class="nav-link text-sm font-medium hover:text-[var(--accent-color)] text-[var(--text-primary)] active">Home</a>
+          <a href="#about" class="nav-link text-sm font-medium hover:text-[var(--accent-color)] text-[var(--text-secondary)]">About</a>
+          <a href="#services" class="nav-link text-sm font-medium hover:text-[var(--accent-color)] text-[var(--text-secondary)]">Services</a>
+          <a href="#pricing" class="nav-link text-sm font-medium hover:text-[var(--accent-color)] text-[var(--text-secondary)]">Pricing</a>
+          <a href="#portfolio" class="nav-link text-sm font-medium hover:text-[var(--accent-color)] text-[var(--text-secondary)]">Portfolio</a>
+          <a href="#faq" class="nav-link text-sm font-medium hover:text-[var(--accent-color)] text-[var(--text-secondary)]">FAQ</a>
+          <a href="#contact" class="nav-link text-sm font-medium hover:text-[var(--accent-color)] text-[var(--text-secondary)]">Contact</a>
+        </nav>
+
+        <!-- Right Side Controls (Theme + CTA) -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" class="p-2.5 rounded-xl border border-[var(--card-border)] hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-[var(--text-primary)]" aria-label="Toggle light/dark theme">
+            <!-- Sun Icon (visible in dark mode) -->
+            <svg id="sun-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <!-- Moon Icon (visible in light mode, hidden by default in script.js) -->
+            <svg id="moon-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+          
+          <a href="#contact" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-lg shadow-blue-500/20 transition-all">
+            Contact Us
+          </a>
+        </div>
+
+        <!-- Mobile Controls Wrapper -->
+        <div class="flex items-center gap-3 md:hidden">
+          <!-- Theme Toggle (Mobile) -->
+          <button id="theme-toggle" class="p-2 rounded-lg border border-[var(--card-border)] text-[var(--text-primary)]" onclick="document.getElementById('theme-toggle').click()">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+          
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-toggle" class="p-2 rounded-lg border border-[var(--card-border)] text-[var(--text-primary)]" aria-label="Toggle mobile menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col bg-[var(--bg-gradient-start)] border-b border-[var(--card-border)] px-6 py-4 space-y-3 absolute top-20 left-0 w-full z-30 shadow-2xl">
+        <a href="#home" class="mobile-link text-[var(--text-primary)] hover:text-blue-500 py-2 text-sm font-medium">Home</a>
+        <a href="#about" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">About</a>
+        <a href="#services" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">Services</a>
+        <a href="#pricing" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">Pricing</a>
+        <a href="#portfolio" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">Portfolio</a>
+        <a href="#faq" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">FAQ</a>
+        <a href="#contact" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">Contact</a>
+        <a href="#contact" class="mobile-link block text-center py-2.5 bg-blue-600 text-white font-semibold rounded-lg text-sm">Get Started</a>
+      </div>
+    </header>
+
+    <!-- 3. HERO SECTION -->
+    <section id="home" class="min-h-[calc(100vh-80px)] flex items-center justify-center relative px-6 py-12">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="lg:col-span-7 flex flex-col justify-center text-left space-y-6 reveal">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold tracking-wider text-blue-500 uppercase self-start">
+            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-ping"></span>
+            Web Design Studio
+          </div>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold font-['Space_Grotesk'] tracking-tight leading-[1.1] text-[var(--text-primary)]">
+            Premium Websites <br />
+            That <span class="bg-gradient-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent">Turn Visitors</span> <br />
+            Into Clients
+          </h1>
+          <p class="text-base sm:text-lg text-[var(--text-secondary)] max-w-xl leading-relaxed">
+            VEXORA Studios builds modern, fast, and responsive websites for businesses, creators, startups, and local brands. Elevate your digital footprint with custom high-end tech design.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#pricing" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-xl shadow-blue-500/20 transition-all hover:-translate-y-0.5">
+              View Packages
+            </a>
+            <a href="#contact" class="px-8 py-4 border border-[var(--card-border)] hover:border-blue-500/50 hover:bg-blue-500/5 text-[var(--text-primary)] font-bold rounded-xl transition-all hover:-translate-y-0.5">
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual Decorative Block -->
+        <div class="lg:col-span-5 relative flex items-center justify-center reveal">
+          <!-- Ambient card style representation -->
+          <div class="w-full max-w-md aspect-square rounded-3xl p-8 bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-white/10 relative overflow-hidden shadow-2xl">
+            <!-- Floating glows inside the frame -->
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl"></div>
+
+            <div class="flex flex-col h-full justify-between z-10 relative">
+              <!-- Mock Header -->
+              <div class="flex items-center justify-between">
+                <div class="flex gap-1.5">
+                  <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+                </div>
+                <div class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">VEXORA CORE v1.0</div>
+              </div>
+
+              <!-- Mock Content Display -->
+              <div class="my-auto space-y-4">
+                <div class="w-2/3 h-5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-md"></div>
+                <div class="space-y-2">
+                  <div class="w-full h-2.5 bg-slate-800 rounded-md"></div>
+                  <div class="w-5/6 h-2.5 bg-slate-800 rounded-md"></div>
+                  <div class="w-4/5 h-2.5 bg-slate-800 rounded-md"></div>
+                </div>
+                <div class="flex items-center gap-3 pt-2">
+                  <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-white">VS</div>
+                  <div>
+                    <div class="text-xs font-semibold text-white">Client Engagement</div>
+                    <div class="text-[9px] text-green-400 font-medium">● Conversions +142%</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Metrics -->
+              <div class="grid grid-cols-2 gap-4 border-t border-slate-800/80 pt-4">
+                <div>
+                  <div class="text-2xl font-bold font-['Space_Grotesk'] text-white">100%</div>
+                  <div class="text-[9px] text-slate-400 uppercase tracking-wider">Mobile Optimized</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold font-['Space_Grotesk'] text-white">&lt;0.8s</div>
+                  <div class="text-[9px] text-slate-400 uppercase tracking-wider">Load Time</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ABOUT SECTION -->
+    <section id="about" class="py-24 px-6 relative border-t border-[var(--card-border)] bg-[var(--card-bg)]">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Image Placeholder Visual -->
+          <div class="lg:col-span-5 reveal flex justify-center">
+            <div class="relative w-full max-w-md aspect-video md:aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-xl group">
+              <!-- Dark premium abstract grid -->
+              <div class="absolute inset-0 bg-slate-950 flex flex-col justify-center items-center p-8">
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 20px 20px;"></div>
+                <svg class="w-16 h-16 text-blue-500 mb-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 .364l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+                <div class="text-center font-['Space_Grotesk'] text-lg font-bold text-white uppercase">VEXORA Philosophy</div>
+                <div class="text-center text-xs text-slate-400 mt-2 max-w-xs leading-relaxed">
+                  We merge strategic business principles with luxury tech UI layouts to produce conversion-focused web systems.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="lg:col-span-7 flex flex-col space-y-6 justify-center text-left reveal">
+            <div class="text-xs font-bold uppercase tracking-widest text-blue-500">About Vexora</div>
+            <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)]">
+              We Build Websites That Build Businesses
+            </h2>
+            <p class="text-base text-[var(--text-secondary)] leading-relaxed">
+              At VEXORA Studios, we believe your website should be your hardest-working employee. We are a specialized, premium web design studio committed to helping modern brands, local startups, and individual creators build high-impact online presences.
+            </p>
+            <p class="text-base text-[var(--text-secondary)] leading-relaxed">
+              Every system we construct is meticulously custom-coded, guaranteeing blazing-fast loading speeds, clean layouts, accessible typography, and absolute responsiveness across every screen size. We skip the heavy dependencies to deliver lightweight codebases that rank higher and perform better.
+            </p>
+            
+            <div class="grid grid-cols-3 gap-6 pt-4 border-t border-[var(--card-border)]">
+              <div>
+                <div class="text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-blue-500">100%</div>
+                <div class="text-xs text-[var(--text-secondary)] mt-1">Responsive Precision</div>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-blue-500">&lt;1s</div>
+                <div class="text-xs text-[var(--text-secondary)] mt-1">Average Page Load</div>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-blue-500">10+</div>
+                <div class="text-xs text-[var(--text-secondary)] mt-1">Global Services</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SERVICES SECTION -->
+    <section id="services" class="py-24 px-6 relative">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <div class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">Our Services</div>
+          <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)] mb-4">
+            Custom Digital Offerings Crafted For Action
+          </h2>
+          <p class="text-base text-[var(--text-secondary)]">
+            High-performance web systems engineered to streamline client acquisition and amplify brand value.
+          </p>
+        </div>
+
+        <!-- Services Grid (6 services) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Service 1: Business Websites -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">Business Websites</h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Premium corporate web presences with robust, responsive architectures that express credibility and turn passive visits into warm inquiries.
+            </p>
+          </div>
+
+          <!-- Service 2: Portfolio Websites -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">Portfolio Websites</h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Eye-catching personal portfolios styled with crisp interactive grids and smooth entering transitions, explicitly tailored for creators, photographers, and consultants.
+            </p>
+          </div>
+
+          <!-- Service 3: Landing Pages -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">Landing Pages</h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Highly direct, zero-friction single-page marketing funnels built for modern ad campaigns. Optimized for lead collection and explosive subscription numbers.
+            </p>
+          </div>
+
+          <!-- Service 4: E-commerce Website Design -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">E-commerce Website Design</h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Streamlined product grid systems and clear carts that provide premium visual display for products. Frictionless navigation that boosts checkout conversion.
+            </p>
+          </div>
+
+          <!-- Service 5: Website Redesign -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">Website Redesign</h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Transform outdated slow pages into dynamic, premium, lightweight interfaces without breaking active customer links. Instant speed upgrades.
+            </p>
+          </div>
+
+          <!-- Service 6: SEO Setup -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">SEO Setup</h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Embedded structured scheme setups, meta-tag mapping, layout adjustments, and semantic markup optimizations targeting faster index times and organic placement.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PRICING SECTION -->
+    <section id="pricing" class="py-24 px-6 relative border-t border-[var(--card-border)] bg-[var(--card-bg)]">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <div class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">Transparent Pricing</div>
+          <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)] mb-4">
+            A Plan For Every Business Stage
+          </h2>
+          <p class="text-base text-[var(--text-secondary)]">
+            No hidden setup fees. Choose the tier that corresponds to your present organizational target.
+          </p>
+        </div>
+
+        <!-- Pricing Grid (3 tiers) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-12">
+          
+          <!-- Tier 1: Basic Website -->
+          <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between text-left reveal">
+            <div>
+              <div class="inline-block px-3 py-1 rounded-full bg-slate-500/10 border border-slate-500/20 text-xs text-[var(--text-primary)] font-medium mb-4">
+                Basic
+              </div>
+              <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)]">Basic Website</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-1">Excellent for single landing pages or quick demos.</p>
+              
+              <div class="my-6">
+                <span class="text-4xl font-extrabold font-['Space_Grotesk'] text-[var(--text-primary)]">₹1200</span>
+                <span class="text-xs text-[var(--text-secondary)] ml-1">/ project</span>
+              </div>
+
+              <!-- Included List -->
+              <ul class="space-y-3.5 border-t border-[var(--card-border)] pt-6 text-sm text-[var(--text-secondary)]">
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>1-page responsive website</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Mobile-friendly design</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Contact section</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Free Vercel/Netlify demo link</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="block text-center w-full py-3 border border-blue-500/20 text-blue-500 hover:bg-blue-500/5 font-semibold rounded-xl transition-all">
+                Select Basic Plan
+              </a>
+            </div>
+          </div>
+
+          <!-- Tier 2: Standard Website (Featured) -->
+          <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between text-left relative border-blue-500/40 shadow-xl shadow-blue-500/5 transform scale-102 reveal">
+            <!-- Best Seller Badge -->
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-blue-600 text-white font-bold text-[10px] uppercase tracking-wider">
+              Best Choice
+            </div>
+
+            <div>
+              <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-500 font-bold mb-4">
+                Standard
+              </div>
+              <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)]">Standard Website</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-1">Perfect for professional business growth and portfolios.</p>
+              
+              <div class="my-6">
+                <span class="text-4xl font-extrabold font-['Space_Grotesk'] text-[var(--text-primary)]">₹1500</span>
+                <span class="text-xs text-[var(--text-secondary)] ml-1">/ project</span>
+              </div>
+
+              <!-- Included List -->
+              <ul class="space-y-3.5 border-t border-[var(--card-border)] pt-6 text-sm text-[var(--text-secondary)]">
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>3–5 sections grid design</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Contact form setup</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Instagram/email integration buttons</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Basic SEO configuration</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>100% Mobile Responsive design</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="block text-center w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/10 transition-all">
+                Select Standard Plan
+              </a>
+            </div>
+          </div>
+
+          <!-- Tier 3: Premium Website -->
+          <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between text-left reveal">
+            <div>
+              <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-400 font-bold mb-4">
+                Premium
+              </div>
+              <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)]">Premium Website</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-1">High-end conversion systems loaded with customization.</p>
+              
+              <div class="my-6">
+                <span class="text-4xl font-extrabold font-['Space_Grotesk'] text-[var(--text-primary)]">₹2000</span>
+                <span class="text-xs text-[var(--text-secondary)] ml-1">/ project</span>
+              </div>
+
+              <!-- Included List -->
+              <ul class="space-y-3.5 border-t border-[var(--card-border)] pt-6 text-sm text-[var(--text-secondary)]">
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Multi-section premium bespoke design</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Smooth lightweight animations</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Contact form setup</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Basic SEO schema configuration</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>High Speed loading optimization</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Free small fixes support (1 month)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8">
+              <a href="#contact" class="block text-center w-full py-3 border border-indigo-500/20 text-indigo-400 hover:bg-indigo-500/5 font-semibold rounded-xl transition-all">
+                Select Premium Plan
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Additional Charging Disclaimer -->
+        <p class="text-center text-xs text-[var(--text-secondary)] italic max-w-2xl mx-auto reveal bg-blue-500/5 py-3 px-6 rounded-2xl border border-[var(--card-border)]">
+          <strong>Please note:</strong> Custom domain name purchasing, branded business email hosting, paid cloud server configurations, and subsequent future template updates are charged separately.
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-24 px-6 relative">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <div class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">Recent Work</div>
+          <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)] mb-4">
+            Showcasing Interactive Excellence
+          </h2>
+          <p class="text-base text-[var(--text-secondary)]">
+            Take a look at a few of our dynamic live demonstration builds tailored for distinct sectors.
+          </p>
+        </div>
+
+        <!-- Portfolio Cards (3 items) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1: Restaurant Website -->
+          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
+            <!-- Visual Thumbnail -->
+            <div class="relative aspect-video w-full overflow-hidden bg-slate-950 flex items-center justify-center">
+              <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-70"></div>
+              <svg class="w-12 h-12 text-orange-500 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              <!-- Info overlay -->
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 border border-white/10 text-[10px] text-orange-400 font-mono">
+                SPICE HOUSE
+              </div>
+            </div>
+            <!-- Details -->
+            <div class="p-6 flex-grow flex flex-col justify-between text-left">
+              <div>
+                <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Restaurant Website</h3>
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Visual menus, interactive reservations layout, fast-loading gourmet imagery placeholders, and elegant location listings.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
+                <span class="text-xs text-[var(--text-secondary)] font-medium">Responsive Layout</span>
+                <span class="text-xs text-blue-500 font-bold group-hover:underline flex items-center gap-1">
+                  Demo Link
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" /></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Fitness Trainer Website -->
+          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
+            <!-- Visual Thumbnail -->
+            <div class="relative aspect-video w-full overflow-hidden bg-slate-950 flex items-center justify-center">
+              <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-70"></div>
+              <svg class="w-12 h-12 text-emerald-500 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 border border-white/10 text-[10px] text-emerald-400 font-mono">
+                PEAK FITNESS
+              </div>
+            </div>
+            <!-- Details -->
+            <div class="p-6 flex-grow flex flex-col justify-between text-left">
+              <div>
+                <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Fitness Trainer Website</h3>
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Crisp program listings, dynamic client transformation grids, simplified pricing, and built-in calendar appointment links.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
+                <span class="text-xs text-[var(--text-secondary)] font-medium">Conversion Funnel</span>
+                <span class="text-xs text-blue-500 font-bold group-hover:underline flex items-center gap-1">
+                  Demo Link
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" /></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Portfolio Website -->
+          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
+            <!-- Visual Thumbnail -->
+            <div class="relative aspect-video w-full overflow-hidden bg-slate-950 flex items-center justify-center">
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 opacity-70"></div>
+              <svg class="w-12 h-12 text-blue-500 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 border border-white/10 text-[10px] text-blue-400 font-mono">
+                ELITE PORTFOLIO
+              </div>
+            </div>
+            <!-- Details -->
+            <div class="p-6 flex-grow flex flex-col justify-between text-left">
+              <div>
+                <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Portfolio Website</h3>
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Interactive modern grids, smooth scrolling hooks, subtle enter layouts, and a clean minimalist resume outline.
+                </p>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
+                <span class="text-xs text-[var(--text-secondary)] font-medium">Personal Brand</span>
+                <span class="text-xs text-blue-500 font-bold group-hover:underline flex items-center gap-1">
+                  Demo Link
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" /></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WHY CHOOSE US SECTION -->
+    <section class="py-24 px-6 relative border-t border-[var(--card-border)] bg-[var(--card-bg)]">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Heading Column -->
+          <div class="lg:col-span-4 flex flex-col justify-center text-left space-y-4 reveal">
+            <div class="text-xs font-bold uppercase tracking-widest text-blue-500">Why Vexora</div>
+            <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)] leading-tight">
+              Bespoke Builds Built To Convert
+            </h2>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
+              We focus on clean visual layout principles, quick file-load speed, and accessibility features to ensure your user path is frictionless.
+            </p>
+            <div class="pt-4">
+              <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm shadow-md shadow-blue-500/10 transition-all">
+                Partner With Us
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Feature Cards Grid (6 items) -->
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
+            
+            <!-- Bullet 1 -->
+            <div class="p-6 rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] flex gap-4 items-start text-left">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center shrink-0 text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" /></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-base text-[var(--text-primary)]">Fast Delivery</h4>
+                <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">No bloated code or endless revisions. We ship fully responsive designs in days, not weeks.</p>
+              </div>
+            </div>
+
+            <!-- Bullet 2 -->
+            <div class="p-6 rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] flex gap-4 items-start text-left">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center shrink-0 text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="2" /></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-base text-[var(--text-primary)]">Mobile Responsive</h4>
+                <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Every structural element fluidly scales to deliver identical polish on mobile and desktop viewports.</p>
+              </div>
+            </div>
+
+            <!-- Bullet 3 -->
+            <div class="p-6 rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] flex gap-4 items-start text-left">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center shrink-0 text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2" /></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-base text-[var(--text-primary)]">Clean Modern Design</h4>
+                <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Elegant layout, dark theme default, and clear margins designed to frame your product naturally.</p>
+              </div>
+            </div>
+
+            <!-- Bullet 4 -->
+            <div class="p-6 rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] flex gap-4 items-start text-left">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center shrink-0 text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-width="2" /></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-base text-[var(--text-primary)]">Client-Focused Websites</h4>
+                <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Structured conversion layouts designed specifically to direct user clicks to contact CTAs.</p>
+              </div>
+            </div>
+
+            <!-- Bullet 5 -->
+            <div class="p-6 rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] flex gap-4 items-start text-left">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center shrink-0 text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" /></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-base text-[var(--text-primary)]">Affordable Pricing</h4>
+                <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Luxury look without the enterprise price tag. Simple flat rates and complete transparency.</p>
+              </div>
+            </div>
+
+            <!-- Bullet 6 -->
+            <div class="p-6 rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] flex gap-4 items-start text-left">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center shrink-0 text-blue-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" /></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-base text-[var(--text-primary)]">Basic SEO Included</h4>
+                <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Integrated sitemap markup, mobile meta elements, and SEO optimized heading layouts.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. REVIEWS SECTION -->
+    <section class="py-24 px-6 relative">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <div class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">Client Reviews</div>
+          <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)] mb-4">
+            Loved By Ambitious Brands
+          </h2>
+          <p class="text-base text-[var(--text-secondary)]">
+            Read authentic reviews from Indian business owners and creators who elevated their brand with VEXORA.
+          </p>
+        </div>
+
+        <!-- Reviews Grid (3 reviews) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Review 1 -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between text-left reveal">
+            <div class="space-y-4">
+              <!-- Star Rating -->
+              <div class="flex gap-1 text-amber-400">
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              </div>
+              <!-- Content -->
+              <p class="text-sm text-[var(--text-secondary)] italic leading-relaxed">
+                "VEXORA created our restaurant's landing page in record time. We immediately noticed a spike in table bookings because the mobile menu works so beautifully. Absolute professionals!"
+              </p>
+            </div>
+            <!-- Client Info -->
+            <div class="flex items-center gap-3 pt-6 border-t border-[var(--card-border)] mt-6">
+              <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center font-bold text-sm text-blue-500">RM</div>
+              <div>
+                <h4 class="font-bold text-sm text-[var(--text-primary)]">Rohan Mehta</h4>
+                <p class="text-[10px] text-[var(--text-secondary)]">Founder, Spice Kitchen</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between text-left reveal">
+            <div class="space-y-4">
+              <!-- Star Rating -->
+              <div class="flex gap-1 text-amber-400">
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              </div>
+              <!-- Content -->
+              <p class="text-sm text-[var(--text-secondary)] italic leading-relaxed">
+                "I needed a clean, fast-loading portfolio to attract luxury coaching clients. VEXORA built a beautiful site with glassmorphism touches. Already received multiple high-end inquiries!"
+              </p>
+            </div>
+            <!-- Client Info -->
+            <div class="flex items-center gap-3 pt-6 border-t border-[var(--card-border)] mt-6">
+              <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center font-bold text-sm text-blue-500">PS</div>
+              <div>
+                <h4 class="font-bold text-sm text-[var(--text-primary)]">Priya Sharma</h4>
+                <p class="text-[10px] text-[var(--text-secondary)]">Personal Coach & Trainer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between text-left reveal">
+            <div class="space-y-4">
+              <!-- Star Rating -->
+              <div class="flex gap-1 text-amber-400">
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              </div>
+              <!-- Content -->
+              <p class="text-sm text-[var(--text-secondary)] italic leading-relaxed">
+                "Our business needed a major visual redesign because the load time was slow. VEXORA did a complete rewrite from scratch. Speed increased instantly, and our Google rank jumped up."
+              </p>
+            </div>
+            <!-- Client Info -->
+            <div class="flex items-center gap-3 pt-6 border-t border-[var(--card-border)] mt-6">
+              <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center font-bold text-sm text-blue-500">AP</div>
+              <div>
+                <h4 class="font-bold text-sm text-[var(--text-primary)]">Amit Patel</h4>
+                <p class="text-[10px] text-[var(--text-secondary)]">Co-founder, TechNexus</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FAQ ACCORDION SECTION -->
+    <section id="faq" class="py-24 px-6 relative border-t border-[var(--card-border)] bg-[var(--card-bg)]">
+      <div class="max-w-4xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-16 reveal">
+          <div class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">FAQ Panel</div>
+          <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)] mb-4">
+            Frequently Answered Concerns
+          </h2>
+          <p class="text-base text-[var(--text-secondary)]">
+            Quickly get answers to our most common development workflows, pay schedules, and updates.
+          </p>
+        </div>
+
+        <!-- Accordion Container -->
+        <div class="space-y-4 reveal">
+          
+          <!-- Q1 -->
+          <div class="faq-item rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left text-[var(--text-primary)] font-semibold text-base focus:outline-none hover:bg-blue-500/5 transition-all">
+              <span>Do I need to buy a domain?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6 text-sm text-[var(--text-secondary)] border-t border-[var(--card-border)]/50 pt-4 leading-relaxed">
+              Yes, you need to purchase a custom domain (e.g., yourname.com). If you do not have one yet, we will guide you on registering it through a reliable registrar, or we can assist in linking your current domain name directly to the server.
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left text-[var(--text-primary)] font-semibold text-base focus:outline-none hover:bg-blue-500/5 transition-all">
+              <span>Is hosting included?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6 text-sm text-[var(--text-secondary)] border-t border-[var(--card-border)]/50 pt-4 leading-relaxed">
+              Free hosting links on staging environments like Vercel or Netlify are included to test your website. For robust custom production environments or commercial high-traffic servers, paid cloud hosting configurations are arranged separately under your direct billing.
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left text-[var(--text-primary)] font-semibold text-base focus:outline-none hover:bg-blue-500/5 transition-all">
+              <span>How long will delivery take?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6 text-sm text-[var(--text-secondary)] border-t border-[var(--card-border)]/50 pt-4 leading-relaxed">
+              Delivery scales with complexity. Basic 1-page websites are typically delivered within 3–5 days, Standard packages in 5–8 days, and Premium multi-section builds are shipped within 10–14 days.
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left text-[var(--text-primary)] font-semibold text-base focus:outline-none hover:bg-blue-500/5 transition-all">
+              <span>How many revisions are included?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6 text-sm text-[var(--text-secondary)] border-t border-[var(--card-border)]/50 pt-4 leading-relaxed">
+              We provide up to 3 rounds of comprehensive design adjustments in our pricing packages to polish layout elements. Your satisfaction is always prioritized.
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left text-[var(--text-primary)] font-semibold text-base focus:outline-none hover:bg-blue-500/5 transition-all">
+              <span>Do you provide support after delivery?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6 text-sm text-[var(--text-secondary)] border-t border-[var(--card-border)]/50 pt-4 leading-relaxed">
+              Our Premium Package comes with 1 month of complimentary minor bug fixes. For other packages or long-term operational updates, affordable support packages are available on request.
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="faq-item rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left text-[var(--text-primary)] font-semibold text-base focus:outline-none hover:bg-blue-500/5 transition-all">
+              <span>Is advance payment required?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6 text-sm text-[var(--text-secondary)] border-t border-[var(--card-border)]/50 pt-4 leading-relaxed">
+              Yes, a standard 50% upfront payment is requested before we begin custom layout development. The remaining 50% is cleared upon final review, right before we transfer the active code package to your server.
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="faq-item rounded-2xl bg-[var(--bg-gradient-start)] border border-[var(--card-border)] overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left text-[var(--text-primary)] font-semibold text-base focus:outline-none hover:bg-blue-500/5 transition-all">
+              <span>Can I connect my own domain later?</span>
+              <svg class="faq-icon w-5 h-5 text-blue-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6 text-sm text-[var(--text-secondary)] border-t border-[var(--card-border)]/50 pt-4 leading-relaxed">
+              Absolutely! Our builds are constructed in completely modular formats. You can host the template on any public cloud server or link your own registrar domain name at any point in the future.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. CONTACT SECTION -->
+    <section id="contact" class="py-24 px-6 relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          
+          <!-- Contact Info Details -->
+          <div class="lg:col-span-5 flex flex-col justify-between text-left space-y-8 reveal">
+            <div class="space-y-4">
+              <div class="text-xs font-bold uppercase tracking-widest text-blue-500">Get In Touch</div>
+              <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)] leading-tight">
+                Let’s Build Something Magnificent
+              </h2>
+              <p class="text-sm text-[var(--text-secondary)] leading-relaxed max-w-sm">
+                Fill out the brief form to start your development workflow. We typically respond within 24 working hours.
+              </p>
+            </div>
+
+            <div class="space-y-6 pt-6 border-t border-[var(--card-border)]">
+              <!-- Email Card -->
+              <a href="mailto:vexoras1905@gmail.com" class="flex gap-4 items-center group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-[10px] text-[var(--text-secondary)] uppercase tracking-wider font-semibold">Email Inquiry</div>
+                  <div class="text-sm font-semibold text-[var(--text-primary)] group-hover:text-blue-500 transition-colors">vexoras1905@gmail.com</div>
+                </div>
+              </a>
+
+              <!-- Instagram Card -->
+              <a href="https://instagram.com/official.vexorastudios" target="_blank" rel="noopener noreferrer" class="flex gap-4 items-center group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-[10px] text-[var(--text-secondary)] uppercase tracking-wider font-semibold">Instagram Direct</div>
+                  <div class="text-sm font-semibold text-[var(--text-primary)] group-hover:text-blue-500 transition-colors">@official.vexorastudios</div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Decorative Subtle Note -->
+            <div class="text-[10px] text-[var(--text-secondary)] font-mono opacity-80 pt-6">
+              VEXORA STUDIOS © 2026 ● GLOBAL INQUIRIES
+            </div>
+          </div>
+
+          <!-- Web3Forms Contact Form (Working) -->
+          <div class="lg:col-span-7 reveal">
+            <div class="glass-panel p-8 sm:p-10 rounded-3xl h-full flex flex-col justify-between">
+              <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                
+                <!-- Web3Forms Hidden Values -->
+                <input type="hidden" name="access_key" value="033f9dc4-db82-4d5f-956e-601d858927ec">
+                <input type="hidden" name="subject" value="New Website Inquiry - VEXORA Studios">
+                <input type="hidden" name="from_name" value="VEXORA Studios Website">
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <!-- Name -->
+                  <div class="flex flex-col text-left space-y-2">
+                    <label for="name" class="text-xs font-semibold text-[var(--text-secondary)]">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Rohan Sharma" class="w-full bg-[var(--bg-gradient-start)] border border-[var(--card-border)] rounded-xl px-4 py-3 text-sm text-[var(--text-primary)] focus:outline-none focus:border-blue-500 transition-all">
+                  </div>
+                  <!-- Email -->
+                  <div class="flex flex-col text-left space-y-2">
+                    <label for="email" class="text-xs font-semibold text-[var(--text-secondary)]">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="rohan@example.com" class="w-full bg-[var(--bg-gradient-start)] border border-[var(--card-border)] rounded-xl px-4 py-3 text-sm text-[var(--text-primary)] focus:outline-none focus:border-blue-500 transition-all">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <!-- Service Needed -->
+                  <div class="flex flex-col text-left space-y-2">
+                    <label for="service" class="text-xs font-semibold text-[var(--text-secondary)]">Service Needed</label>
+                    <select id="service" name="service" required class="w-full bg-[var(--bg-gradient-start)] border border-[var(--card-border)] rounded-xl px-4 py-3 text-sm text-[var(--text-secondary)] focus:outline-none focus:border-blue-500 transition-all">
+                      <option value="" disabled selected>Select service</option>
+                      <option value="Business Website">Business Website</option>
+                      <option value="Portfolio Website">Portfolio Website</option>
+                      <option value="Landing Page">Landing Page</option>
+                      <option value="E-commerce Website">E-commerce Website</option>
+                      <option value="Website Redesign">Website Redesign</option>
+                      <option value="SEO Setup">SEO Setup</option>
+                    </select>
+                  </div>
+                  <!-- Budget Range -->
+                  <div class="flex flex-col text-left space-y-2">
+                    <label for="budget" class="text-xs font-semibold text-[var(--text-secondary)]">Estimated Budget</label>
+                    <select id="budget" name="budget" required class="w-full bg-[var(--bg-gradient-start)] border border-[var(--card-border)] rounded-xl px-4 py-3 text-sm text-[var(--text-secondary)] focus:outline-none focus:border-blue-500 transition-all">
+                      <option value="" disabled selected>Select budget</option>
+                      <option value="₹1200 - Basic">₹1200 (Basic Package)</option>
+                      <option value="₹1500 - Standard">₹1500 (Standard Package)</option>
+                      <option value="₹2000 - Premium">₹2000 (Premium Package)</option>
+                      <option value="Custom Scope">Custom Scope Quote</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div class="flex flex-col text-left space-y-2">
+                  <label for="message" class="text-xs font-semibold text-[var(--text-secondary)]">Inquiry Details</label>
+                  <textarea id="message" name="message" rows="4" required placeholder="Please brief your business goals, required sections, or links..." class="w-full bg-[var(--bg-gradient-start)] border border-[var(--card-border)] rounded-xl px-4 py-3 text-sm text-[var(--text-primary)] focus:outline-none focus:border-blue-500 transition-all resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm shadow-xl shadow-blue-500/20 transition-all hover:-translate-y-0.5 uppercase tracking-wider">
+                  Send Inquiry Now
+                </button>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. FOOTER -->
+    <footer class="border-t border-[var(--card-border)] bg-[var(--bg-gradient-start)] text-[var(--text-secondary)] py-16 px-6 relative">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start text-left">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="md:col-span-4 space-y-4">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-lg flex items-center justify-center font-bold text-white">
+              V
+            </div>
+            <span class="font-['Space_Grotesk'] font-bold text-lg text-[var(--text-primary)] uppercase">VEXORA</span>
+          </a>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed max-w-sm">
+            VEXORA Studios is a premium web design agency helping businesses, startups, creators, and local brands build blazing-fast, high-converting, and responsive web systems.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="font-semibold text-sm text-[var(--text-primary)] tracking-tight">Quick Links</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#home" class="hover:text-[var(--text-primary)] transition-colors">Home Page</a></li>
+            <li><a href="#about" class="hover:text-[var(--text-primary)] transition-colors">About Studio</a></li>
+            <li><a href="#pricing" class="hover:text-[var(--text-primary)] transition-colors">Pricing Packages</a></li>
+            <li><a href="#portfolio" class="hover:text-[var(--text-primary)] transition-colors">Interactive Work</a></li>
+            <li><a href="#faq" class="hover:text-[var(--text-primary)] transition-colors">FAQ Panel</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="font-semibold text-sm text-[var(--text-primary)] tracking-tight">Services</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#services" class="hover:text-[var(--text-primary)] transition-colors">Business Websites</a></li>
+            <li><a href="#services" class="hover:text-[var(--text-primary)] transition-colors">Portfolio Websites</a></li>
+            <li><a href="#services" class="hover:text-[var(--text-primary)] transition-colors">Landing Pages</a></li>
+            <li><a href="#services" class="hover:text-[var(--text-primary)] transition-colors">E-commerce Design</a></li>
+            <li><a href="#services" class="hover:text-[var(--text-primary)] transition-colors">Website Redesign</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Social / Contact -->
+        <div class="md:col-span-2 space-y-4">
+          <h4 class="font-semibold text-sm text-[var(--text-primary)] tracking-tight">Connect</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li>
+              <a href="mailto:vexoras1905@gmail.com" class="hover:text-[var(--text-primary)] transition-colors">Email Support</a>
+            </li>
+            <li>
+              <a href="https://instagram.com/official.vexorastudios" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">Instagram</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Subfooter -->
+      <div class="max-w-7xl mx-auto border-t border-[var(--card-border)] mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] gap-4">
+        <div>
+          © 2026 VEXORA Studios. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a href="#home" class="hover:text-[var(--text-primary)] transition-colors">Terms of Service</a>
+          <a href="#home" class="hover:text-[var(--text-primary)] transition-colors">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Local Vanilla JS -->
+    <script src="/script.js"></script>
+  </body>
+</html>
