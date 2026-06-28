@@ -1375,5 +1375,21 @@
 
     <!-- Local Vanilla JS -->
     <script src="/script.js"></script>
+
+    <!-- Ultimate Global Inline Fail-safe Fallback -->
+    <script>
+      (function() {
+        // Redundant high-performance timer to force-reveal all sections in case of script load errors, blocked domains, or older device issues
+        setTimeout(function() {
+          var hiddenReveals = document.querySelectorAll('.reveal:not(.active)');
+          if (hiddenReveals.length > 0) {
+            console.warn('Backup fallback triggered for ' + hiddenReveals.length + ' hidden elements.');
+            hiddenReveals.forEach(function(el) {
+              el.classList.add('active');
+            });
+          }
+        }, 1500);
+      })();
+    </script>
   </body>
 </html>
