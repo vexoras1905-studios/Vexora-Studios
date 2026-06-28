@@ -781,16 +781,86 @@
           
           <!-- Project 1: Restaurant Website -->
           <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
-            <!-- Visual Thumbnail -->
-            <div class="relative aspect-video w-full overflow-hidden bg-slate-950 flex items-center justify-center">
-              <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-70"></div>
-              <svg class="w-12 h-12 text-orange-500 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-              <!-- Info overlay -->
-              <div class="absolute bottom-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 border border-white/10 text-[10px] text-orange-400 font-mono">
-                SPICE HOUSE
+            <!-- Visual Thumbnail Mockup (Pure HTML/CSS) -->
+            <div class="relative aspect-video w-full overflow-hidden bg-[#0c0c0b] border-b border-white/5 flex flex-col group/mockup select-none">
+              <!-- Top browser address bar -->
+              <div class="w-full h-5 bg-[#0e0e0e] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/50"></span>
+                </div>
+                <div class="bg-white/5 border border-white/5 rounded-md px-2 py-0.5 text-[7px] text-white/30 font-mono scale-90 w-36 text-center truncate">
+                  https://spicehouse.vexora.com
+                </div>
+                <div class="w-4"></div>
               </div>
+
+              <!-- Page content wrapper (moves/scales slightly on card hover) -->
+              <div class="flex-grow w-full relative overflow-hidden bg-[#0f0e0c] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-105">
+                <!-- Warm luxury ambiance gradient -->
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-orange-600/10 rounded-full blur-xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-yellow-600/5 rounded-full blur-xl pointer-events-none"></div>
+
+                <!-- Tiny Website Header -->
+                <div class="flex items-center justify-between border-b border-white/5 pb-1.5 mb-2 shrink-0">
+                  <span class="text-[9px] font-['Space_Grotesk'] font-bold text-orange-400 tracking-wider">L'AMBROISIE</span>
+                  <div class="flex gap-2 text-[7px] text-white/40">
+                    <span>Menu</span>
+                    <span>Reservations</span>
+                    <span>About</span>
+                  </div>
+                </div>
+
+                <!-- Main Layout -->
+                <div class="flex-grow grid grid-cols-12 gap-2 items-center">
+                  <!-- Left Text Column -->
+                  <div class="col-span-7 flex flex-col text-left space-y-1">
+                    <span class="text-[6px] text-orange-400/80 font-mono tracking-widest uppercase">Michelin Star dining</span>
+                    <h4 class="text-[11px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
+                      Crafting Culinary Masterpieces
+                    </h4>
+                    <p class="text-[6.5px] text-white/50 leading-snug">
+                      Experience rare white truffle delicacies, wood-fired mains, and masterfully aged vintage wines.
+                    </p>
+                    <div class="pt-1 flex gap-1.5">
+                      <span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-400 text-[6px] font-bold border border-orange-500/30">
+                        Book Table
+                      </span>
+                      <span class="px-2 py-0.5 rounded bg-white/5 text-white/40 text-[6px] font-medium border border-white/5">
+                        View Menu
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Right Dish Mockup Column -->
+                  <div class="col-span-5 flex items-center justify-center relative">
+                    <!-- Elegant Abstract CSS Plate -->
+                    <div class="relative w-16 h-16 rounded-full border border-orange-500/20 flex items-center justify-center bg-black/40 shadow-lg animate-float-slow">
+                      <div class="w-12 h-12 rounded-full border border-dashed border-orange-500/30 flex items-center justify-center">
+                        <!-- Food core representation -->
+                        <div class="w-7 h-7 rounded-full bg-gradient-to-br from-amber-600 to-orange-700 shadow-inner flex items-center justify-center">
+                          <!-- Herb garnish dots -->
+                          <span class="absolute top-5 right-7 w-1 h-1 rounded-full bg-green-400/80"></span>
+                          <span class="absolute bottom-6 right-6 w-0.5 h-0.5 rounded-full bg-yellow-400/90"></span>
+                          <span class="absolute top-6 left-7 w-1 h-1 rounded-full bg-emerald-400/80"></span>
+                        </div>
+                      </div>
+                      <!-- Plate shine glare overlay -->
+                      <div class="absolute inset-1 rounded-full bg-gradient-to-tr from-white/0 via-white/5 to-transparent pointer-events-none"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom miniature strip -->
+                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[6px] text-white/30 font-mono shrink-0">
+                  <span>Chef's Special: Truffle Tagliolini</span>
+                  <span class="text-orange-400/80 font-bold">$38</span>
+                </div>
+              </div>
+
+              <!-- Specular Gloss Overlays -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] pointer-events-none z-10"></div>
             </div>
             <!-- Details -->
             <div class="p-6 flex-grow flex flex-col justify-between text-left">
@@ -802,9 +872,8 @@
               </div>
               <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
                 <span class="text-xs text-[var(--text-secondary)] font-medium">Responsive Layout</span>
-                <span class="text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1">
-                  Demo Link
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" /></svg>
+                <span class="portfolio-demo-btn text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1 cursor-pointer" data-demo-title="Restaurant Website" data-demo-url="">
+                  View Live Demo ↗
                 </span>
               </div>
             </div>
@@ -812,15 +881,93 @@
 
           <!-- Project 2: Fitness Trainer Website -->
           <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
-            <!-- Visual Thumbnail -->
-            <div class="relative aspect-video w-full overflow-hidden bg-slate-950 flex items-center justify-center">
-              <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-70"></div>
-              <svg class="w-12 h-12 text-emerald-500 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              <div class="absolute bottom-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 border border-white/10 text-[10px] text-emerald-400 font-mono">
-                PEAK FITNESS
+            <!-- Visual Thumbnail Mockup (Pure HTML/CSS) -->
+            <div class="relative aspect-video w-full overflow-hidden bg-[#0c0c0b] border-b border-white/5 flex flex-col group/mockup select-none">
+              <!-- Top browser address bar -->
+              <div class="w-full h-5 bg-[#0e0e0e] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/50"></span>
+                </div>
+                <div class="bg-white/5 border border-white/5 rounded-md px-2 py-0.5 text-[7px] text-white/30 font-mono scale-90 w-36 text-center truncate">
+                  https://peakfitness.vexora.com
+                </div>
+                <div class="w-4"></div>
               </div>
+
+              <!-- Page content wrapper (moves/scales slightly on card hover) -->
+              <div class="flex-grow w-full relative overflow-hidden bg-[#0a0f0d] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-105">
+                <!-- Neon energetic ambiance gradient -->
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-emerald-600/10 rounded-full blur-xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-teal-600/5 rounded-full blur-xl pointer-events-none"></div>
+
+                <!-- Tiny Website Header -->
+                <div class="flex items-center justify-between border-b border-white/5 pb-1.5 mb-2 shrink-0">
+                  <span class="text-[9px] font-['Space_Grotesk'] font-bold text-emerald-400 tracking-wider">APEX ATHLETES</span>
+                  <div class="flex gap-2 text-[7px] text-white/40">
+                    <span>Programs</span>
+                    <span>Schedule</span>
+                    <span>Pricing</span>
+                  </div>
+                </div>
+
+                <!-- Main Layout -->
+                <div class="flex-grow grid grid-cols-12 gap-2 items-center">
+                  <!-- Left Text Column -->
+                  <div class="col-span-7 flex flex-col text-left space-y-1">
+                    <span class="text-[6px] text-emerald-400/80 font-mono tracking-widest uppercase">Elite performance training</span>
+                    <h4 class="text-[11px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
+                      Unleash Your Ultimate Self
+                    </h4>
+                    
+                    <!-- Transformation Progress Mockup -->
+                    <div class="bg-black/40 border border-white/5 rounded p-1 space-y-1 mt-0.5">
+                      <div class="flex justify-between items-center text-[5px] text-white/50">
+                        <span>Fat loss progress</span>
+                        <span class="text-emerald-400">-12.4%</span>
+                      </div>
+                      <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                        <div class="w-4/5 h-full bg-emerald-400 rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Right Pricing Card Mockup Column -->
+                  <div class="col-span-5 flex items-center justify-center relative">
+                    <!-- Miniature Pricing Card -->
+                    <div class="w-full bg-black/60 border border-emerald-500/30 rounded p-1.5 text-center shadow-lg relative">
+                      <div class="absolute top-0 right-1 px-1 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/30 text-[4px] text-emerald-400 uppercase font-bold scale-90">
+                        Best value
+                      </div>
+                      <h5 class="text-[6px] text-white/50 uppercase font-mono tracking-wider">PRO COACHING</h5>
+                      <div class="text-[12px] font-bold text-white font-['Space_Grotesk'] mt-0.5">
+                        $49<span class="text-[6px] font-normal text-white/40">/mo</span>
+                      </div>
+                      <div class="space-y-0.5 my-1 text-left">
+                        <div class="flex items-center gap-0.5 text-[5px] text-white/60">
+                          <span class="text-emerald-400">✓</span> 1-on-1 Guidance
+                        </div>
+                        <div class="flex items-center gap-0.5 text-[5px] text-white/60">
+                          <span class="text-emerald-400">✓</span> Nutrition Planner
+                        </div>
+                      </div>
+                      <span class="w-full block text-center py-0.5 bg-emerald-400 text-black text-[5px] font-bold rounded">
+                        Join Apex
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom stats badge -->
+                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[6px] text-white/30 font-mono shrink-0">
+                  <span>Current active athletes: 1,420+</span>
+                  <span class="text-emerald-400 font-bold">● Live</span>
+                </div>
+              </div>
+
+              <!-- Specular Gloss Overlays -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] pointer-events-none z-10"></div>
             </div>
             <!-- Details -->
             <div class="p-6 flex-grow flex flex-col justify-between text-left">
@@ -832,9 +979,8 @@
               </div>
               <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
                 <span class="text-xs text-[var(--text-secondary)] font-medium">Conversion Funnel</span>
-                <span class="text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1">
-                  Demo Link
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" /></svg>
+                <span class="portfolio-demo-btn text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1 cursor-pointer" data-demo-title="Fitness Trainer Website" data-demo-url="">
+                  View Live Demo ↗
                 </span>
               </div>
             </div>
@@ -842,15 +988,84 @@
 
           <!-- Project 3: Portfolio Website -->
           <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
-            <!-- Visual Thumbnail -->
-            <div class="relative aspect-video w-full overflow-hidden bg-slate-950 flex items-center justify-center">
-              <div class="absolute inset-0 bg-gradient-to-br from-[#dfba6b]/10 to-[#aa7c11]/10 opacity-70"></div>
-              <svg class="w-12 h-12 text-[var(--accent-color)] transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-              <div class="absolute bottom-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 border border-white/10 text-[10px] text-[#dfba6b] font-mono">
-                ELITE PORTFOLIO
+            <!-- Visual Thumbnail Mockup (Pure HTML/CSS) -->
+            <div class="relative aspect-video w-full overflow-hidden bg-[#0c0c0b] border-b border-white/5 flex flex-col group/mockup select-none">
+              <!-- Top browser address bar -->
+              <div class="w-full h-5 bg-[#0e0e0e] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/50"></span>
+                </div>
+                <div class="bg-white/5 border border-white/5 rounded-md px-2 py-0.5 text-[7px] text-white/30 font-mono scale-90 w-36 text-center truncate">
+                  https://eliteportfolio.vexora.com
+                </div>
+                <div class="w-4"></div>
               </div>
+
+              <!-- Page content wrapper (moves/scales slightly on card hover) -->
+              <div class="flex-grow w-full relative overflow-hidden bg-[#07080a] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-105">
+                <!-- Luxury minimalist gold ambiance gradient -->
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#dfba6b]/10 rounded-full blur-xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-[#aa7c11]/5 rounded-full blur-xl pointer-events-none"></div>
+
+                <!-- Tiny Website Header -->
+                <div class="flex items-center justify-between border-b border-white/5 pb-1.5 mb-2 shrink-0">
+                  <span class="text-[9px] font-['Space_Grotesk'] font-bold text-[#dfba6b] tracking-wider">ELITE CREATIVE</span>
+                  <div class="flex gap-2 text-[7px] text-white/40">
+                    <span>Work</span>
+                    <span>About</span>
+                    <span>Resume ↗</span>
+                  </div>
+                </div>
+
+                <!-- Main Layout (Laptop/Studio Screen Mockup style) -->
+                <div class="flex-grow grid grid-cols-12 gap-2 items-center">
+                  <!-- Left Text Column -->
+                  <div class="col-span-7 flex flex-col text-left space-y-1">
+                    <span class="text-[6px] text-[#dfba6b]/80 font-mono tracking-widest uppercase">Senior interaction designer</span>
+                    <h4 class="text-[11px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
+                      Crafting Award-Winning Digital Art
+                    </h4>
+                    <p class="text-[6.5px] text-white/50 leading-snug">
+                      Translating brand principles into breathtaking, high-performance web applications.
+                    </p>
+                    <div class="pt-1 flex gap-1.5">
+                      <span class="px-2 py-0.5 rounded bg-white/10 text-white text-[5px] font-bold border border-white/10">
+                        View Work
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Right Bento Grid Mockup Column -->
+                  <div class="col-span-5 grid grid-cols-2 gap-1 relative">
+                    <!-- Bento item 1 -->
+                    <div class="bg-white/5 border border-white/5 rounded p-1 flex flex-col justify-between text-left h-8">
+                      <span class="text-[4px] text-white/40 uppercase font-mono">Experience</span>
+                      <span class="text-[7px] font-bold text-white font-['Space_Grotesk']">8+ Years</span>
+                    </div>
+                    <!-- Bento item 2 -->
+                    <div class="bg-[#dfba6b]/10 border border-[#dfba6b]/20 rounded p-1 flex flex-col justify-between text-left h-8">
+                      <span class="text-[4px] text-[#dfba6b] uppercase font-mono">Awwwards</span>
+                      <span class="text-[7px] font-bold text-[#dfba6b] font-['Space_Grotesk']">12 Gold</span>
+                    </div>
+                    <!-- Bento item 3 (spans full width) -->
+                    <div class="col-span-2 bg-white/5 border border-white/5 rounded p-1 flex justify-between items-center h-5">
+                      <span class="text-[5px] text-white/60">Creative Portfolio 2026</span>
+                      <span class="text-[5px] text-[#dfba6b]">↗</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom miniature strip -->
+                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[6px] text-white/30 font-mono shrink-0">
+                  <span>Scroll to explore projects</span>
+                  <span class="text-[#dfba6b]/80 font-bold">VEXORA</span>
+                </div>
+              </div>
+
+              <!-- Specular Gloss Overlays -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] pointer-events-none z-10"></div>
             </div>
             <!-- Details -->
             <div class="p-6 flex-grow flex flex-col justify-between text-left">
@@ -862,9 +1077,8 @@
               </div>
               <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
                 <span class="text-xs text-[var(--text-secondary)] font-medium">Personal Brand</span>
-                <span class="text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1">
-                  Demo Link
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" /></svg>
+                <span class="portfolio-demo-btn text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1 cursor-pointer" data-demo-title="Portfolio Website" data-demo-url="">
+                  View Live Demo ↗
                 </span>
               </div>
             </div>
@@ -1365,6 +1579,48 @@
         </div>
       </div>
     </footer>
+
+    <!-- PREMIUM PORTFOLIO DEMO MODAL -->
+    <div id="demo-modal" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/85 backdrop-blur-md p-4 transition-all duration-300">
+      <div class="glass-panel w-full max-w-md p-8 rounded-2xl border border-[#dfba6b]/30 shadow-2xl relative overflow-hidden animate-float-slow text-center">
+        <!-- Floating glow background circles inside modal -->
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-[#dfba6b]/5 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-[#aa7c11]/5 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <!-- Luxury Specular Glare -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.04] pointer-events-none"></div>
+
+        <!-- Premium Agency Badge/Logo -->
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-black/60 border border-[#dfba6b]/20 text-[var(--accent-color)] shadow-inner mb-5 relative">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 18c-1.11 0-2.08-.402-2.799-1M12 3c1.11 0 2.08.402 2.799 1M12 3a9.003 9.003 0 112.799 15" />
+          </svg>
+          <div class="absolute -inset-1 rounded-full bg-[#dfba6b]/10 blur-sm"></div>
+        </div>
+
+        <!-- Project Title Header -->
+        <h3 id="demo-modal-project-name" class="text-xs font-mono uppercase tracking-widest text-[var(--accent-color)] mb-2">
+          Project Demo
+        </h3>
+        <h2 class="text-2xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)] mb-3">
+          Live Demo Coming Soon
+        </h2>
+        
+        <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 px-2">
+          Our engineering team is polishing the final interactive showcase. Contact VEXORA Studios today to secure a bespoke, custom version of this layout for your brand.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <a href="#contact" id="demo-modal-ok" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[#dfba6b] to-[#aa7c11] hover:from-[#f7e7c4] hover:to-[#dfba6b] text-black font-semibold rounded-xl text-xs shadow-md transition-all cursor-pointer">
+            Inquire Now
+          </a>
+          <button id="demo-modal-close" class="w-full sm:w-auto px-6 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[var(--text-primary)] font-medium rounded-xl text-xs transition-all cursor-pointer">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top-btn flex items-center justify-center pointer-events-none opacity-0" aria-label="Back to Top">
