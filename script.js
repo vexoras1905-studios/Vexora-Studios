@@ -1,23 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initApp = () => {
   // --- LOADING SCREEN ---
   const loader = document.getElementById('loader');
   if (loader) {
+    let hasFaded = false;
     const fadeOutLoader = () => {
-      if (loader && loader.parentNode) {
-        loader.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-        loader.style.opacity = '0';
-        loader.style.pointerEvents = 'none';
+      if (hasFaded) return;
+      hasFaded = true;
+      if (loader) {
+        loader.classList.add('js-fade-out');
         setTimeout(() => {
           if (loader && loader.parentNode) {
             loader.remove();
           }
-        }, 450);
+        }, 400);
       }
     };
     
     // Safety backup triggers in case inline script in HTML was bypassed
-    window.addEventListener('load', () => setTimeout(fadeOutLoader, 900));
-    setTimeout(fadeOutLoader, 1000);
+    window.addEventListener('load', () => setTimeout(fadeOutLoader, 150));
+    setTimeout(fadeOutLoader, 1000); // 1.0s maximum show time trigger
+    setTimeout(fadeOutLoader, 1200); // 1.2s secondary safety backup
   }
 
   // --- THEME TOGGLE (DARK / LIGHT) ---
@@ -136,11 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- ACTIVE NAVBAR HIGHLIGHTING ON SCROLL ---
+  // --- ACTIVE NAVBAR HIGHLIGHTING & BACK TO TOP ON SCROLL ---
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
+  const backToTopBtn = document.getElementById('back-to-top');
 
   window.addEventListener('scroll', () => {
+    // Active Navbar highlights
     let currentSectionId = '';
     const scrollPosition = window.scrollY + 120; // offset
 
@@ -160,5 +164,30 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('active');
       }
     });
+
+    // Back to Top Visibility Toggle
+    if (backToTopBtn) {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
   });
-});
+
+  // Scroll to Top action
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+};
+
+if (document.readyState !== 'loading') {
+  initApp();
+} else {
+  document.addEventListener('DOMContentLoaded', initApp);
+}

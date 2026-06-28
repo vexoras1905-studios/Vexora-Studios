@@ -44,6 +44,21 @@
     overflow-x: hidden;
     line-height: 1.6;
     letter-spacing: -0.01em;
+    position: relative;
+  }
+
+  /* Sophisticated, subtle luxury noise texture overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
   :root.light body {
@@ -81,20 +96,107 @@
 /* Glassmorphism utility classes with lift-on-hover */
 .glass-panel {
   background: var(--card-bg) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
+  backdrop-filter: blur(32px) !important;
+  -webkit-backdrop-filter: blur(32px) !important;
   border: 1px solid var(--card-border) !important;
-  box-shadow: 0 10px 35px -10px var(--shadow-color) !important;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.55), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
   border-radius: 20px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+:root.light .glass-panel {
+  box-shadow: 
+    0 12px 30px rgba(28, 26, 23, 0.06), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Glass specular glare overlay */
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.01) 35%,
+    transparent 35%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+:root.light .glass-panel::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.2) 30%,
+    transparent 30%,
+    transparent 100%
+  );
+}
+
+/* Moving Premium Glass Diagonal Shimmer Sweep */
+.glass-panel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.0) 30%,
+    rgba(255, 255, 255, 0.04) 50%,
+    rgba(255, 255, 255, 0.0) 70%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 2;
+  transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root.light .glass-panel::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.0) 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.0) 70%,
+    transparent 100%
+  );
+}
+
+.glass-panel:hover::after {
+  left: 150%;
 }
 
 .glass-panel:hover {
   border-color: rgba(212, 175, 55, 0.35) !important;
-  box-shadow: 0 20px 45px -12px var(--accent-glow), 0 0 1px 0 var(--accent-color) !important;
-  transform: translateY(-6px) scale(1.01) !important;
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.72), 
+    0 0 0 1px rgba(212, 175, 55, 0.2), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.12) !important;
+  transform: translateY(-6px) !important;
+}
+
+:root.light .glass-panel:hover {
+  border-color: rgba(170, 124, 17, 0.35) !important;
+  box-shadow: 
+    0 16px 36px rgba(28, 26, 23, 0.1), 
+    0 0 0 1px rgba(170, 124, 17, 0.12), 
+    inset 0 1px 3px rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Why Choose Us Feature Card Styling */
@@ -108,9 +210,9 @@
 }
 
 .p-6.rounded-2xl.border.flex.gap-4:hover {
-  border-color: rgba(212, 175, 55, 0.28) !important;
-  transform: translateY(-4px) !important;
-  box-shadow: 0 12px 25px -10px var(--accent-glow) !important;
+  border-color: rgba(212, 175, 55, 0.22) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Loading Spinner & Fade In */
@@ -195,25 +297,64 @@ header {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
 }
 
-/* Premium Button Overrides & Smooth Shiny Reflection */
-a[href="#pricing"].bg-blue-600,
-a[href="#contact"].bg-blue-600,
-a[href="#contact"].border,
-a[href*="#contact"].bg-blue-600,
-button[type="submit"],
-.pricing-btn {
-  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+/* Premium Luxury Button Classes */
+.btn-gold-solid, .btn-gold-outline, .btn-white-outline, button[type="submit"] {
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   border-radius: 12px !important;
   font-weight: 700 !important;
   position: relative;
   overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
-/* Solid Gold Shimmer Animation */
-a[href="#pricing"].bg-blue-600::before,
-a[href="#contact"].bg-blue-600::before,
-button[type="submit"]::before,
-.pricing-btn::before {
+.btn-gold-solid, button[type="submit"] {
+  background: linear-gradient(135deg, #dfba6b 0%, #aa7c11 100%) !important;
+  color: #000000 !important;
+  border: 1px solid #dfba6b !important;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.14) !important;
+}
+
+.btn-gold-solid:hover, button[type="submit"]:hover {
+  background: #000000 !important;
+  color: #dfba6b !important;
+  border-color: #dfba6b !important;
+  box-shadow: 0 12px 30px -4px rgba(212, 175, 55, 0.32) !important;
+  transform: translateY(-2px);
+}
+
+.btn-gold-outline {
+  background: transparent !important;
+  color: #dfba6b !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+}
+
+.btn-gold-outline:hover {
+  background: linear-gradient(135deg, #dfba6b 0%, #aa7c11 100%) !important;
+  color: #000000 !important;
+  border-color: #dfba6b !important;
+  box-shadow: 0 12px 25px -5px rgba(212, 175, 55, 0.22) !important;
+  transform: translateY(-2px);
+}
+
+.btn-white-outline {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+.btn-white-outline:hover {
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+  background: rgba(212, 175, 55, 0.04) !important;
+  transform: translateY(-2px);
+}
+
+/* Subtle Premium Shimmer Animation */
+.btn-gold-solid::before, .btn-gold-outline::before, .btn-white-outline::before, button[type="submit"]::before {
   content: '';
   position: absolute;
   top: 0;
@@ -223,16 +364,13 @@ button[type="submit"]::before,
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.15),
     transparent
   );
   transition: 0.5s;
 }
 
-a[href="#pricing"].bg-blue-600:hover::before,
-a[href="#contact"].bg-blue-600:hover::before,
-button[type="submit"]:hover::before,
-.pricing-btn:hover::before {
+.btn-gold-solid:hover::before, .btn-gold-outline:hover::before, .btn-white-outline:hover::before, button[type="submit"]:hover::before {
   left: 100%;
   transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -568,5 +706,53 @@ select {
   animation: floatGentleDelayed 8.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
   animation-delay: 1.2s;
   will-change: transform;
+}
+
+/* Floating Back to Top Button Styling */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--card-bg) !important;
+  color: var(--accent-color) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, opacity;
+  transform: translateY(15px) scale(0.9);
+}
+
+@media (min-width: 768px) {
+  .back-to-top-btn {
+    bottom: 2.25rem;
+    right: 2.25rem;
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+:root.light .back-to-top-btn {
+  border-color: rgba(170, 124, 17, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(28, 26, 23, 0.12) !important;
+}
+
+.back-to-top-btn:hover {
+  background: linear-gradient(135deg, #dfba6b 0%, #aa7c11 100%) !important;
+  color: #000000 !important;
+  border-color: #dfba6b !important;
+  transform: translateY(-4px) scale(1.05) !important;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
+}
+
+.back-to-top-btn.visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
 }
 

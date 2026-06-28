@@ -28,6 +28,42 @@
 
     <!-- Local Stylesheet (Processed by Vite with Tailwind) -->
     <link rel="stylesheet" href="/style.css" />
+
+    <!-- Inline Loader Fallback & Core Styles -->
+    <style>
+      /* Absolute preloader safety CSS fallback - guarantee hiding by 1.5s max even if JS blocks */
+      @keyframes forceFadeOutLoader {
+        0% {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+        75% {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+        100% {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+      }
+
+      #loader {
+        animation: forceFadeOutLoader 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+        will-change: opacity, visibility;
+      }
+
+      /* Explicit fast JS fade-out overrides */
+      #loader.js-fade-out {
+        animation: none !important;
+        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+      }
+    </style>
   </head>
   <body class="selection:bg-[#d4af37]/30 selection:text-white">
 
@@ -54,7 +90,7 @@
     </div>
 
     <script>
-      // High-performance instant loader controller to prevent infinite stuck state on mobile/in-app browsers
+      // Ultra high-performance instant loader controller to prevent stuck state in any browser (e.g. Instagram, Facebook)
       (function() {
         var loader = document.getElementById('loader');
         if (loader) {
@@ -62,32 +98,32 @@
           function fadeOutLoader() {
             if (hasFaded) return;
             hasFaded = true;
-            loader.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-            loader.style.opacity = '0';
-            loader.style.pointerEvents = 'none';
+            loader.classList.add('js-fade-out');
             setTimeout(function() {
               if (loader && loader.parentNode) {
                 loader.parentNode.removeChild(loader);
               }
-            }, 450);
+            }, 400);
           }
 
-          // Trigger automatically at 900ms to give a fast, premium, non-blocking entrance
-          var targetDelay = 900;
+          // Target show duration for premium aesthetic (1.0 second)
+          var showDuration = 1000;
           
-          // Use setTimeout as a rock-solid guarantee
-          var fallbackTimer = setTimeout(fadeOutLoader, targetDelay);
+          // Trigger the fade-out after 1.0 second
+          setTimeout(fadeOutLoader, showDuration);
 
-          // If the page fully loads before that, still honor a minimum delay
+          // Force fade out if page readyState is complete (e.g. on back/forward navigations)
+          if (document.readyState === 'complete') {
+            fadeOutLoader();
+          }
+
+          // Listen for window load event to hide the loader promptly when assets load
           window.addEventListener('load', function() {
-            var timePassed = (window.performance && window.performance.now) ? window.performance.now() : 400;
-            var remaining = Math.max(0, targetDelay - timePassed);
-            clearTimeout(fallbackTimer);
-            setTimeout(fadeOutLoader, remaining);
+            setTimeout(fadeOutLoader, 150);
           });
 
-          // Absolute ultimate fallback for slow network/blocked assets
-          setTimeout(fadeOutLoader, 1000);
+          // Absolute ultimate fallback fail-safe (1.2 seconds absolute JS limit)
+          setTimeout(fadeOutLoader, 1200);
         }
       })();
     </script>
@@ -102,11 +138,11 @@
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <!-- Brand Logo -->
         <a href="#home" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-xl flex items-center justify-center font-bold text-lg text-white transition-transform duration-300 group-hover:scale-105">
+          <div class="w-10 h-10 bg-gradient-to-tr from-[#dfba6b] to-[#aa7c11] rounded-xl flex items-center justify-center font-bold text-lg text-black transition-transform duration-300 group-hover:scale-105 shadow-md shadow-[var(--accent-glow)]">
             V
           </div>
           <span class="font-['Space_Grotesk'] font-bold text-xl tracking-tight uppercase text-[var(--text-primary)]">
-            Vexora<span class="text-blue-500">Studios</span>
+            Vexora<span class="text-[var(--accent-color)]">Studios</span>
           </span>
         </a>
 
@@ -124,7 +160,7 @@
         <!-- Right Side Controls (Theme + CTA) -->
         <div class="hidden md:flex items-center gap-4">
           <!-- Theme Toggle Button -->
-          <button class="theme-toggle-btn p-2.5 rounded-xl border border-[var(--card-border)] hover:border-blue-500/50 hover:bg-blue-500/5 transition-all text-[var(--text-primary)]" aria-label="Toggle light/dark theme">
+          <button class="theme-toggle-btn p-2.5 rounded-xl border border-[var(--card-border)] hover:border-[var(--accent-color)]/50 hover:bg-[var(--accent-color)]/5 transition-all text-[var(--text-primary)]" aria-label="Toggle light/dark theme">
             <!-- Sun Icon (visible in dark mode) -->
             <svg class="sun-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -135,7 +171,7 @@
             </svg>
           </button>
           
-          <a href="#contact" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-lg shadow-blue-500/20 transition-all">
+          <a href="#contact" class="px-5 py-2.5 btn-gold-outline text-sm font-semibold rounded-xl transition-all">
             Contact Us
           </a>
         </div>
@@ -143,7 +179,7 @@
         <!-- Mobile Controls Wrapper -->
         <div class="flex items-center gap-3 md:hidden">
           <!-- Theme Toggle (Mobile) -->
-          <button class="theme-toggle-btn p-2 rounded-lg border border-[var(--card-border)] text-[var(--text-primary)] hover:border-blue-500/50 hover:bg-blue-500/5 transition-all" aria-label="Toggle light/dark theme">
+          <button class="theme-toggle-btn p-2 rounded-lg border border-[var(--card-border)] text-[var(--text-primary)] hover:border-[var(--accent-color)]/50 hover:bg-[var(--accent-color)]/5 transition-all" aria-label="Toggle light/dark theme">
             <!-- Sun Icon (visible in dark mode) -->
             <svg class="sun-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -164,15 +200,15 @@
       </div>
 
       <!-- Mobile Dropdown Menu -->
-      <div id="mobile-menu" class="hidden md:hidden flex-col bg-[var(--bg-gradient-start)] border-b border-[var(--card-border)] px-6 py-4 space-y-3 absolute top-20 left-0 w-full z-30 shadow-2xl">
-        <a href="#home" class="mobile-link text-[var(--text-primary)] hover:text-blue-500 py-2 text-sm font-medium">Home</a>
-        <a href="#about" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">About</a>
-        <a href="#services" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">Services</a>
-        <a href="#pricing" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">Pricing</a>
-        <a href="#portfolio" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">Portfolio</a>
-        <a href="#faq" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">FAQ</a>
-        <a href="#contact" class="mobile-link text-[var(--text-secondary)] hover:text-blue-500 py-2 text-sm font-medium">Contact</a>
-        <a href="#contact" class="mobile-link block text-center py-2.5 bg-blue-600 text-white font-semibold rounded-lg text-sm">Get Started</a>
+      <div id="mobile-menu" class="hidden md:hidden flex-col bg-[var(--card-bg)] backdrop-blur-2xl border-b border-[var(--card-border)] px-6 py-4 space-y-3 absolute top-20 left-0 w-full z-30 shadow-2xl">
+        <a href="#home" class="mobile-link text-[var(--text-primary)] hover:text-[var(--accent-color)] py-2 text-sm font-medium">Home</a>
+        <a href="#about" class="mobile-link text-[var(--text-secondary)] hover:text-[var(--accent-color)] py-2 text-sm font-medium">About</a>
+        <a href="#services" class="mobile-link text-[var(--text-secondary)] hover:text-[var(--accent-color)] py-2 text-sm font-medium">Services</a>
+        <a href="#pricing" class="mobile-link text-[var(--text-secondary)] hover:text-[var(--accent-color)] py-2 text-sm font-medium">Pricing</a>
+        <a href="#portfolio" class="mobile-link text-[var(--text-secondary)] hover:text-[var(--accent-color)] py-2 text-sm font-medium">Portfolio</a>
+        <a href="#faq" class="mobile-link text-[var(--text-secondary)] hover:text-[var(--accent-color)] py-2 text-sm font-medium">FAQ</a>
+        <a href="#contact" class="mobile-link text-[var(--text-secondary)] hover:text-[var(--accent-color)] py-2 text-sm font-medium">Contact</a>
+        <a href="#contact" class="mobile-link block text-center py-2.5 btn-gold-outline text-sm font-semibold rounded-lg">Get Started</a>
       </div>
     </header>
 
@@ -206,7 +242,7 @@
         <!-- Visual Decorative Block -->
         <div class="lg:col-span-5 relative flex items-center justify-center reveal">
           <!-- Ambient card style representation -->
-          <div class="w-full max-w-md aspect-square rounded-3xl p-8 bg-gradient-to-br from-[#12110f]/90 to-[#070706]/90 border border-[var(--card-border)] relative overflow-hidden shadow-2xl animate-float-slow">
+          <div class="w-full max-w-md aspect-square glass-panel p-8 relative overflow-hidden animate-float-slow">
             <!-- Floating glows inside the frame -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-[#d4af37]/5 rounded-full blur-2xl"></div>
             <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-[#aa7c11]/5 rounded-full blur-2xl"></div>
@@ -325,12 +361,12 @@
           </p>
         </div>
 
-        <!-- Services Grid (6 services) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Services Grid (2 services left) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           
           <!-- Service 1: Business Websites -->
           <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-6">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
@@ -341,35 +377,9 @@
             </p>
           </div>
 
-          <!-- Service 2: Portfolio Websites -->
+          <!-- Service 2: E-commerce Website Design -->
           <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">Portfolio Websites</h3>
-            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
-              Eye-catching personal portfolios styled with crisp interactive grids and smooth entering transitions, explicitly tailored for creators, photographers, and consultants.
-            </p>
-          </div>
-
-          <!-- Service 3: Landing Pages -->
-          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">Landing Pages</h3>
-            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
-              Highly direct, zero-friction single-page marketing funnels built for modern ad campaigns. Optimized for lead collection and explosive subscription numbers.
-            </p>
-          </div>
-
-          <!-- Service 4: E-commerce Website Design -->
-          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-6">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
@@ -380,38 +390,12 @@
             </p>
           </div>
 
-          <!-- Service 5: Website Redesign -->
-          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">Website Redesign</h3>
-            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
-              Transform outdated slow pages into dynamic, premium, lightweight interfaces without breaking active customer links. Instant speed upgrades.
-            </p>
-          </div>
-
-          <!-- Service 6: SEO Setup -->
-          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">SEO Setup</h3>
-            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
-              Embedded structured scheme setups, meta-tag mapping, layout adjustments, and semantic markup optimizations targeting faster index times and organic placement.
-            </p>
-          </div>
-
         </div>
 
         <!-- Tools & Tech Ribbon -->
         <div class="mt-20 pt-10 border-t border-[var(--card-border)] reveal">
           <div class="text-center mb-10">
-            <h4 class="text-xs font-bold uppercase tracking-widest text-blue-500 font-mono">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-[var(--accent-color)] font-mono">
               Our Creative Tools & Technology Ecosystem
             </h4>
             <p class="text-sm text-[var(--text-secondary)] mt-1 opacity-80">
@@ -439,7 +423,7 @@
                 </div>
                 <!-- React -->
                 <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
-                  <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(30 12 12)"/>
                     <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(90 12 12)"/>
                     <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(150 12 12)"/>
@@ -457,7 +441,7 @@
                 </div>
                 <!-- TypeScript -->
                 <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
-                  <div class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold font-mono">TS</div>
+                  <div class="w-5 h-5 rounded bg-[var(--accent-color)]/20 text-[var(--accent-color)] flex items-center justify-center text-[10px] font-bold font-mono">TS</div>
                   <span>TypeScript</span>
                 </div>
                 <!-- Vite -->
@@ -485,7 +469,7 @@
                 </div>
                 <!-- Webflow -->
                 <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
-                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-4a4 4 0 00-4-4H5a2 2 0 00-2 2v6" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21v-8a4 4 0 00-4-4H9" />
                   </svg>
@@ -513,7 +497,7 @@
                 </div>
                 <!-- React -->
                 <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
-                  <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(30 12 12)"/>
                     <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(90 12 12)"/>
                     <ellipse cx="12" cy="12" rx="11" ry="4.2" transform="rotate(150 12 12)"/>
@@ -531,7 +515,7 @@
                 </div>
                 <!-- TypeScript -->
                 <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
-                  <div class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold font-mono">TS</div>
+                  <div class="w-5 h-5 rounded bg-[var(--accent-color)]/20 text-[var(--accent-color)] flex items-center justify-center text-[10px] font-bold font-mono">TS</div>
                   <span>TypeScript</span>
                 </div>
                 <!-- Vite -->
@@ -559,7 +543,7 @@
                 </div>
                 <!-- Webflow -->
                 <div class="flex items-center gap-3 text-sm font-semibold text-[var(--text-primary)] font-['Space_Grotesk'] tracking-wide">
-                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-4a4 4 0 00-4-4H5a2 2 0 00-2 2v6" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21v-8a4 4 0 00-4-4H9" />
                   </svg>
@@ -1381,6 +1365,13 @@
         </div>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn flex items-center justify-center pointer-events-none opacity-0" aria-label="Back to Top">
+      <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+      </svg>
+    </button>
 
     <!-- Local Vanilla JS -->
     <script src="/script.js"></script>
