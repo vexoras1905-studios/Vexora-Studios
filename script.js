@@ -2,21 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- LOADING SCREEN ---
   const loader = document.getElementById('loader');
   if (loader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
+    const fadeOutLoader = () => {
+      if (loader && loader.parentNode) {
+        loader.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
         loader.style.opacity = '0';
         loader.style.pointerEvents = 'none';
         setTimeout(() => {
-          loader.remove();
-        }, 500);
-      }, 800); // Small professional delay to showcase premium feel
-    });
-
-    // Fallback: remove loader if it takes too long
-    setTimeout(() => {
-      loader.style.opacity = '0';
-      loader.style.pointerEvents = 'none';
-    }, 3000);
+          if (loader && loader.parentNode) {
+            loader.remove();
+          }
+        }, 450);
+      }
+    };
+    
+    // Safety backup triggers in case inline script in HTML was bypassed
+    window.addEventListener('load', () => setTimeout(fadeOutLoader, 900));
+    setTimeout(fadeOutLoader, 1000);
   }
 
   // --- THEME TOGGLE (DARK / LIGHT) ---
