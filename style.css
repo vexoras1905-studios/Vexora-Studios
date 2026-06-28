@@ -2,31 +2,31 @@
 
 @layer base {
   :root {
-    --bg-gradient-start: #030712; /* Deep modern gray-950 */
-    --bg-gradient-end: #0b0f19;   /* Sleek deep charcoal */
-    --text-primary: #f3f4f6;      /* Gray-100 */
-    --text-secondary: #9ca3af;    /* Gray-400 */
-    --card-bg: rgba(17, 24, 39, 0.55); /* Glass card background */
-    --card-border: rgba(255, 255, 255, 0.06);
-    --accent-color: #3b82f6;      /* Vibrant blue */
-    --accent-glow: rgba(59, 130, 246, 0.15);
-    --shadow-color: rgba(0, 0, 0, 0.6);
-    --badge-bg: rgba(59, 130, 246, 0.08);
-    --badge-text: #60a5fa;
+    --bg-gradient-start: #040404; /* True dark rich obsidian black */
+    --bg-gradient-end: #12100d;   /* Sleek warm bronze charcoal */
+    --text-primary: #f5f2eb;      /* Off-white pure alabaster silk */
+    --text-secondary: #a39e93;    /* Brushed warm champagne grey */
+    --card-bg: rgba(18, 17, 15, 0.72); /* Premium warm gold-tinted obsidian glass */
+    --card-border: rgba(212, 175, 55, 0.12); /* Ultra-fine gold hairline frame */
+    --accent-color: #d4af37;      /* Vivid imperial metallic gold */
+    --accent-glow: rgba(212, 175, 55, 0.18); /* Soft gold ambient aura */
+    --shadow-color: rgba(0, 0, 0, 0.85);
+    --badge-bg: rgba(212, 175, 55, 0.08); /* Warm gold leaf tint */
+    --badge-text: #e5c158;        /* Lustrous soft satin gold */
   }
 
   :root.light {
-    --bg-gradient-start: #f8fafc; /* Slate-50 */
-    --bg-gradient-end: #f1f5f9;   /* Slate-100 */
-    --text-primary: #0f172a;      /* Slate-900 */
-    --text-secondary: #475569;    /* Slate-600 */
-    --card-bg: rgba(255, 255, 255, 0.7);
-    --card-border: rgba(15, 23, 42, 0.06);
-    --accent-color: #2563eb;      /* Blue-600 */
-    --accent-glow: rgba(37, 99, 235, 0.08);
-    --shadow-color: rgba(15, 23, 42, 0.03);
-    --badge-bg: rgba(37, 99, 235, 0.06);
-    --badge-text: #1d4ed8;
+    --bg-gradient-start: #fbfbf9; /* Soft luxury warm ivory/cream */
+    --bg-gradient-end: #f4f1ea;   /* Silk cashmere white */
+    --text-primary: #1c1a17;      /* Deep rich obsidian bronze black */
+    --text-secondary: #706a5e;    /* Sophisticated warm sepia bronze */
+    --card-bg: rgba(255, 255, 255, 0.84); /* Elegant pure ivory glass */
+    --card-border: rgba(170, 124, 17, 0.18); /* Burnished gold border */
+    --accent-color: #aa7c11;      /* Burnished rich old gold */
+    --accent-glow: rgba(170, 124, 17, 0.1);
+    --shadow-color: rgba(28, 26, 23, 0.05);
+    --badge-bg: rgba(170, 124, 17, 0.06);
+    --badge-text: #8c640d;
   }
 
   html {
@@ -35,7 +35,10 @@
   }
 
   body {
-    background: radial-gradient(circle at 50% 0%, var(--bg-gradient-end) 0%, var(--bg-gradient-start) 100%) !important;
+    background: 
+      radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.04) 0%, transparent 45%),
+      radial-gradient(circle at 50% 0%, var(--bg-gradient-end) 0%, var(--bg-gradient-start) 100%) !important;
     color: var(--text-primary);
     transition: background 0.5s ease, color 0.5s ease;
     overflow-x: hidden;
@@ -43,15 +46,22 @@
     letter-spacing: -0.01em;
   }
 
+  :root.light body {
+    background: 
+      radial-gradient(circle at 15% 20%, rgba(170, 124, 17, 0.03) 0%, transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(170, 124, 17, 0.02) 0%, transparent 45%),
+      radial-gradient(circle at 50% 0%, var(--bg-gradient-end) 0%, var(--bg-gradient-start) 100%) !important;
+  }
+
   /* Consistent Section Padding for Premium Breathing Space */
   section {
-    padding-top: 7rem !important;
-    padding-bottom: 7rem !important;
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
   }
   
   #home {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
   }
 
   /* Headings Weight & Typography Setup */
@@ -71,10 +81,10 @@
 /* Glassmorphism utility classes with lift-on-hover */
 .glass-panel {
   background: var(--card-bg) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
   border: 1px solid var(--card-border) !important;
-  box-shadow: 0 10px 30px -10px var(--shadow-color) !important;
+  box-shadow: 0 10px 35px -10px var(--shadow-color) !important;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -82,7 +92,7 @@
 }
 
 .glass-panel:hover {
-  border-color: rgba(59, 130, 246, 0.3) !important;
+  border-color: rgba(212, 175, 55, 0.35) !important;
   box-shadow: 0 20px 45px -12px var(--accent-glow), 0 0 1px 0 var(--accent-color) !important;
   transform: translateY(-6px) scale(1.01) !important;
 }
@@ -98,7 +108,7 @@
 }
 
 .p-6.rounded-2xl.border.flex.gap-4:hover {
-  border-color: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(212, 175, 55, 0.28) !important;
   transform: translateY(-4px) !important;
   box-shadow: 0 12px 25px -10px var(--accent-glow) !important;
 }
@@ -162,7 +172,7 @@
   bottom: -6px;
   left: 0;
   border-radius: 2px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4) !important;
+  background: linear-gradient(90deg, #d4af37, #dfba6b) !important;
   transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -172,20 +182,20 @@
 
 /* Header Glassmorphism scroll states */
 header {
-  background: rgba(15, 23, 42, 0.55) !important;
+  background: rgba(10, 10, 10, 0.65) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
   border-bottom: 1px solid var(--card-border) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 :root.light header {
-  background: rgba(255, 255, 255, 0.65) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
 }
 
-/* Premium Button Overrides */
+/* Premium Button Overrides & Smooth Shiny Reflection */
 a[href="#pricing"].bg-blue-600,
 a[href="#contact"].bg-blue-600,
 a[href="#contact"].border,
@@ -195,29 +205,36 @@ button[type="submit"],
   transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   border-radius: 12px !important;
   font-weight: 700 !important;
+  position: relative;
+  overflow: hidden;
 }
 
-a[href="#pricing"].bg-blue-600:hover,
-a[href="#contact"].bg-blue-600:hover,
-button[type="submit"]:hover {
-  transform: translateY(-3px) scale(1.03) !important;
-  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.45), 0 8px 20px -6px rgba(59, 130, 246, 0.2) !important;
+/* Solid Gold Shimmer Animation */
+a[href="#pricing"].bg-blue-600::before,
+a[href="#contact"].bg-blue-600::before,
+button[type="submit"]::before,
+.pricing-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: 0.5s;
 }
 
-a[href="#contact"].border:hover {
-  transform: translateY(-3px) scale(1.03) !important;
-  border-color: var(--accent-color) !important;
-  background: rgba(59, 130, 246, 0.06) !important;
-  box-shadow: 0 10px 25px -10px rgba(59, 130, 246, 0.1) !important;
-}
-
-/* Pricing plan secondary buttons */
-a[href="#contact"].border-blue-500\/20:hover,
-a[href="#contact"].border-indigo-500\/20:hover {
-  transform: translateY(-3px) scale(1.03) !important;
-  background: rgba(59, 130, 246, 0.08) !important;
-  border-color: var(--accent-color) !important;
-  box-shadow: 0 10px 25px -10px var(--accent-glow) !important;
+a[href="#pricing"].bg-blue-600:hover::before,
+a[href="#contact"].bg-blue-600:hover::before,
+button[type="submit"]:hover::before,
+.pricing-btn:hover::before {
+  left: 100%;
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Premium Form Input Fields */
@@ -225,7 +242,7 @@ input[type="text"],
 input[type="email"],
 select,
 textarea {
-  background: rgba(15, 23, 42, 0.45) !important;
+  background: rgba(18, 17, 15, 0.5) !important;
   border: 1px solid var(--card-border) !important;
   border-radius: 12px !important;
   padding: 13px 16px !important;
@@ -244,16 +261,16 @@ textarea {
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 textarea::placeholder {
-  color: rgba(156, 163, 175, 0.5) !important;
+  color: rgba(163, 158, 147, 0.5) !important;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #3b82f6 !important;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18) !important;
-  background: rgba(15, 23, 42, 0.65) !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 4px var(--accent-glow) !important;
+  background: rgba(18, 17, 15, 0.75) !important;
 }
 
 :root.light input[type="text"]:focus,
@@ -261,17 +278,6 @@ textarea:focus {
 :root.light select:focus,
 :root.light textarea:focus {
   background: #ffffff !important;
-}
-
-/* Custom premium dropdown select */
-select {
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") !important;
-  background-repeat: no-repeat !important;
-  background-position: right 16px center !important;
-  background-size: 16px 16px !important;
-  padding-right: 40px !important;
 }
 
 /* FAQ Accordion Premium Styling */
@@ -283,7 +289,7 @@ select {
 }
 
 .faq-item:hover {
-  border-color: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(212, 175, 55, 0.25) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 10px 20px -10px var(--accent-glow) !important;
 }
@@ -316,7 +322,7 @@ select {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 26s linear infinite;
+  animation: marquee 28s linear infinite;
 }
 
 /* Pause scroll on hover for accessibility */
@@ -327,4 +333,153 @@ select {
 /* Maintain crisp icon styling in light mode */
 :root.light .marquee-track span {
   color: var(--text-primary);
+}
+
+
+/* ==========================================================================
+   --- LUXURY BRUSHED GOLD UTILITY OVERRIDES ---
+   Redefines standard blue/cyan Tailwind classes into high-end gold accents
+   ========================================================================== */
+
+/* 1. Global text overrides to Gold */
+.text-blue-500, 
+.text-blue-400, 
+.text-cyan-400, 
+.text-indigo-500,
+.group:hover .group-hover\:text-blue-500 {
+  color: var(--badge-text) !important;
+}
+
+/* 2. Badge & Icon backgrounds to Gold Tint */
+.bg-blue-500\/10, 
+.bg-blue-500\/15, 
+.bg-blue-500\/5, 
+.bg-blue-500\/8, 
+.bg-blue-600\/10, 
+.bg-blue-600\/15, 
+.bg-blue-600\/5,
+.bg-slate-800\/80 {
+  background-color: var(--badge-bg) !important;
+}
+
+/* 3. Solid Primary Buttons & Badges to Real Gold Metallic */
+.bg-blue-600, 
+.bg-blue-500, 
+.bg-indigo-600,
+button[type="submit"] {
+  background: linear-gradient(135deg, #dfba6b 0%, #c5a059 50%, #aa7c11 100%) !important;
+  color: #0d0c0a !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 10px 25px -10px var(--accent-glow) !important;
+}
+
+:root.light .bg-blue-600, 
+:root.light .bg-blue-500, 
+:root.light .bg-indigo-600 {
+  background: linear-gradient(135deg, #aa7c11, #845e07) !important;
+  color: #ffffff !important;
+}
+
+/* Primary Button Hovers */
+.hover\:bg-blue-700:hover, 
+.hover\:bg-blue-600:hover, 
+.bg-blue-600:hover,
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #f7e7c4 0%, #dfba6b 50%, #c5a059 100%) !important;
+  color: #0d0c0a !important;
+  box-shadow: 0 15px 32px -8px rgba(212, 175, 55, 0.45) !important;
+  border-color: rgba(212, 175, 55, 0.6) !important;
+}
+
+:root.light .hover\:bg-blue-700:hover, 
+:root.light .bg-blue-600:hover {
+  background: linear-gradient(135deg, #dfba6b, #aa7c11) !important;
+  color: #0d0c0a !important;
+}
+
+/* 4. Secondary outlines and borders */
+.border-blue-500\/20, 
+.border-indigo-500\/20,
+a[href="#contact"].border {
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  background: rgba(212, 175, 55, 0.02) !important;
+}
+
+.border-blue-500\/20:hover, 
+.border-indigo-500\/20:hover,
+a[href="#contact"].border:hover {
+  border-color: rgba(212, 175, 55, 0.5) !important;
+  background: rgba(212, 175, 55, 0.08) !important;
+}
+
+/* 5. Gradient background mappings (e.g. from-blue-600 to-indigo-500) */
+.from-blue-600, 
+.from-blue-500, 
+.from-indigo-600 {
+  --tw-gradient-from: #dfba6b !important;
+  --tw-gradient-to: #aa7c11 !important;
+  background-image: linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to)) !important;
+}
+.to-indigo-500, 
+.to-cyan-500, 
+.to-blue-500 {
+  --tw-gradient-to: #aa7c11 !important;
+}
+
+/* 6. Form Fields Focus mapping */
+.focus\:border-blue-500:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 4px var(--accent-glow) !important;
+}
+
+/* 7. Dropdown Select Gold Arrow */
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d4af37'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+  background-size: 16px 16px !important;
+  padding-right: 40px !important;
+}
+
+/* 8. Marquee Ribbon monochrome gold styling */
+.marquee-track svg {
+  color: var(--accent-color) !important;
+  stroke: var(--accent-color) !important;
+  filter: drop-shadow(0 0 1px var(--accent-glow));
+}
+.marquee-track .bg-blue-600 {
+  background: var(--accent-color) !important;
+  color: var(--bg-gradient-start) !important;
+}
+
+/* 9. Glow behind logo in loader & main page */
+.blur-xl.opacity-60 {
+  background-color: var(--accent-color) !important;
+  opacity: 0.3 !important;
+}
+
+/* 10. Background Decoration Glow mapping */
+.bg-blue-600\/10, .bg-indigo-600\/10, .bg-blue-500\/5 {
+  background-color: rgba(212, 175, 55, 0.05) !important;
+}
+
+/* 11. Custom highlight animations & hover states */
+.faq-btn:hover {
+  background-color: rgba(212, 175, 55, 0.04) !important;
+}
+.hover\:bg-blue-500\/5:hover {
+  background-color: rgba(212, 175, 55, 0.04) !important;
+}
+.group-hover\:text-blue-500:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Smooth realistic glass shadows */
+.shadow-xl {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7) !important;
+}
+:root.light .shadow-xl {
+  box-shadow: 0 20px 40px -15px rgba(28, 26, 23, 0.06) !important;
 }
