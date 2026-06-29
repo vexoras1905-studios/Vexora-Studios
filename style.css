@@ -2,31 +2,31 @@
 
 @layer base {
   :root {
-    --bg-gradient-start: #040404; /* True dark rich obsidian black */
-    --bg-gradient-end: #12100d;   /* Sleek warm bronze charcoal */
-    --text-primary: #f5f2eb;      /* Off-white pure alabaster silk */
-    --text-secondary: #a39e93;    /* Brushed warm champagne grey */
-    --card-bg: rgba(18, 17, 15, 0.72); /* Premium warm gold-tinted obsidian glass */
-    --card-border: rgba(212, 175, 55, 0.12); /* Ultra-fine gold hairline frame */
-    --accent-color: #d4af37;      /* Vivid imperial metallic gold */
-    --accent-glow: rgba(212, 175, 55, 0.18); /* Soft gold ambient aura */
-    --shadow-color: rgba(0, 0, 0, 0.85);
-    --badge-bg: rgba(212, 175, 55, 0.08); /* Warm gold leaf tint */
-    --badge-text: #e5c158;        /* Lustrous soft satin gold */
+    --bg-gradient-start: #050306; /* Dark arachnid black */
+    --bg-gradient-end: #0c0407;   /* Deep scarlet web shadow */
+    --text-primary: #f8fafc;      /* Pure clean alabaster */
+    --text-secondary: #94a3b8;    /* Slate blue grey */
+    --card-bg: rgba(10, 6, 12, 0.82); /* Spider-nest dark glass */
+    --card-border: rgba(226, 27, 27, 0.22); /* Hairline glowing spider red frame */
+    --accent-color: #e21b1b;      /* Spider-Man signature Crimson Red */
+    --accent-glow: rgba(226, 27, 27, 0.3); /* Radiant spider-sense red aura */
+    --shadow-color: rgba(0, 0, 0, 0.95);
+    --badge-bg: rgba(226, 27, 27, 0.12); /* Crimson tint */
+    --badge-text: #ef4444;        /* Bright scarlet text */
   }
 
   :root.light {
-    --bg-gradient-start: #fbfbf9; /* Soft luxury warm ivory/cream */
-    --bg-gradient-end: #f4f1ea;   /* Silk cashmere white */
-    --text-primary: #1c1a17;      /* Deep rich obsidian bronze black */
-    --text-secondary: #706a5e;    /* Sophisticated warm sepia bronze */
-    --card-bg: rgba(255, 255, 255, 0.84); /* Elegant pure ivory glass */
-    --card-border: rgba(170, 124, 17, 0.18); /* Burnished gold border */
-    --accent-color: #aa7c11;      /* Burnished rich old gold */
-    --accent-glow: rgba(170, 124, 17, 0.1);
-    --shadow-color: rgba(28, 26, 23, 0.05);
-    --badge-bg: rgba(170, 124, 17, 0.06);
-    --badge-text: #8c640d;
+    --bg-gradient-start: #f8fafc; /* Crisp silver white web canvas */
+    --bg-gradient-end: #f1f5f9;   /* Clean light slate */
+    --text-primary: #0f172a;      /* Dark slate */
+    --text-secondary: #475569;    /* Medium slate */
+    --card-bg: rgba(255, 255, 255, 0.88); /* Crystal web glass */
+    --card-border: rgba(30, 64, 175, 0.16); /* Royal blue outline */
+    --accent-color: #1e40af;      /* Spider-Man electric blue */
+    --accent-glow: rgba(30, 64, 175, 0.12);
+    --shadow-color: rgba(15, 23, 42, 0.04);
+    --badge-bg: rgba(30, 64, 175, 0.06);
+    --badge-text: #2563eb;
   }
 
   html {
@@ -36,8 +36,8 @@
 
   body {
     background: 
-      radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
-      radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.04) 0%, transparent 45%),
+      radial-gradient(circle at 15% 20%, rgba(226, 27, 27, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(30, 64, 175, 0.08) 0%, transparent 45%),
       radial-gradient(circle at 50% 0%, var(--bg-gradient-end) 0%, var(--bg-gradient-start) 100%) !important;
     color: var(--text-primary);
     transition: background 0.5s ease, color 0.5s ease;
@@ -63,8 +63,8 @@
 
   :root.light body {
     background: 
-      radial-gradient(circle at 15% 20%, rgba(170, 124, 17, 0.03) 0%, transparent 45%),
-      radial-gradient(circle at 85% 80%, rgba(170, 124, 17, 0.02) 0%, transparent 45%),
+      radial-gradient(circle at 15% 20%, rgba(226, 27, 27, 0.04) 0%, transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(30, 64, 175, 0.04) 0%, transparent 45%),
       radial-gradient(circle at 50% 0%, var(--bg-gradient-end) 0%, var(--bg-gradient-start) 100%) !important;
   }
 
@@ -183,19 +183,19 @@
 }
 
 .glass-panel:hover {
-  border-color: rgba(212, 175, 55, 0.35) !important;
+  border-color: rgba(226, 27, 27, 0.4) !important;
   box-shadow: 
-    0 20px 48px rgba(0, 0, 0, 0.72), 
-    0 0 0 1px rgba(212, 175, 55, 0.2), 
+    0 20px 48px rgba(0, 0, 0, 0.75), 
+    0 0 0 1px rgba(226, 27, 27, 0.22), 
     inset 0 1px 2px rgba(255, 255, 255, 0.12) !important;
   transform: translateY(-6px) !important;
 }
 
 :root.light .glass-panel:hover {
-  border-color: rgba(170, 124, 17, 0.35) !important;
+  border-color: rgba(30, 64, 175, 0.4) !important;
   box-shadow: 
-    0 16px 36px rgba(28, 26, 23, 0.1), 
-    0 0 0 1px rgba(170, 124, 17, 0.12), 
+    0 16px 36px rgba(18, 14, 30, 0.08), 
+    0 0 0 1px rgba(30, 64, 175, 0.15), 
     inset 0 1px 3px rgba(255, 255, 255, 0.8) !important;
 }
 
@@ -210,7 +210,7 @@
 }
 
 .p-6.rounded-2xl.border.flex.gap-4:hover {
-  border-color: rgba(212, 175, 55, 0.22) !important;
+  border-color: rgba(226, 27, 27, 0.3) !important;
   transform: translateY(-3px) !important;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6) !important;
 }
@@ -274,7 +274,7 @@
   bottom: -6px;
   left: 0;
   border-radius: 2px;
-  background: linear-gradient(90deg, #d4af37, #dfba6b) !important;
+  background: linear-gradient(90deg, #e21b1b, #1e40af) !important;
   transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -312,31 +312,31 @@ header {
 }
 
 .btn-gold-solid, button[type="submit"] {
-  background: linear-gradient(135deg, #dfba6b 0%, #aa7c11 100%) !important;
-  color: #000000 !important;
-  border: 1px solid #dfba6b !important;
-  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.14) !important;
+  background: linear-gradient(135deg, #e21b1b 0%, #1e40af 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #e21b1b !important;
+  box-shadow: 0 4px 18px rgba(226, 27, 27, 0.25) !important;
 }
 
 .btn-gold-solid:hover, button[type="submit"]:hover {
   background: #000000 !important;
-  color: #dfba6b !important;
-  border-color: #dfba6b !important;
-  box-shadow: 0 12px 30px -4px rgba(212, 175, 55, 0.32) !important;
+  color: #ef4444 !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 12px 30px -4px rgba(226, 27, 27, 0.45) !important;
   transform: translateY(-2px);
 }
 
 .btn-gold-outline {
   background: transparent !important;
-  color: #dfba6b !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(226, 27, 27, 0.45) !important;
 }
 
 .btn-gold-outline:hover {
-  background: linear-gradient(135deg, #dfba6b 0%, #aa7c11 100%) !important;
-  color: #000000 !important;
-  border-color: #dfba6b !important;
-  box-shadow: 0 12px 25px -5px rgba(212, 175, 55, 0.22) !important;
+  background: linear-gradient(135deg, #e21b1b 0%, #1e40af 100%) !important;
+  color: #ffffff !important;
+  border-color: #e21b1b !important;
+  box-shadow: 0 12px 25px -5px rgba(226, 27, 27, 0.3) !important;
   transform: translateY(-2px);
 }
 
@@ -475,11 +475,11 @@ textarea:focus {
 
 
 /* ==========================================================================
-   --- LUXURY BRUSHED GOLD UTILITY OVERRIDES ---
-   Redefines standard blue/cyan Tailwind classes into high-end gold accents
+   --- SPIDERMAN WEB-SLINGER UTILITY OVERRIDES ---
+   Redefines standard classes into glowing spider-crimson and electric web-blue accents
    ========================================================================== */
 
-/* 1. Global text overrides to Gold */
+/* 1. Global text overrides to Crimson Red */
 .text-blue-500, 
 .text-blue-400, 
 .text-cyan-400, 
@@ -488,7 +488,7 @@ textarea:focus {
   color: var(--badge-text) !important;
 }
 
-/* 2. Badge & Icon backgrounds to Gold Tint */
+/* 2. Badge & Icon backgrounds to Crimson Tint */
 .bg-blue-500\/10, 
 .bg-blue-500\/15, 
 .bg-blue-500\/5, 
@@ -500,21 +500,21 @@ textarea:focus {
   background-color: var(--badge-bg) !important;
 }
 
-/* 3. Solid Primary Buttons & Badges to Real Gold Metallic */
+/* 3. Solid Primary Buttons & Badges to Spider-Man Red and Blue gradient */
 .bg-blue-600, 
 .bg-blue-500, 
 .bg-indigo-600,
 button[type="submit"] {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #dfba6b 0%, #c5a059 50%, #aa7c11 100%) !important;
-  color: #0d0c0a !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  background: linear-gradient(135deg, #e21b1b 0%, #a82525 50%, #1e40af 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(226, 27, 27, 0.45) !important;
   box-shadow: 0 10px 25px -10px var(--accent-glow) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Subtle gold luxury reflection sweep on hover */
+/* Subtle luxury reflection sweep on hover */
 .bg-blue-600::after, 
 .bg-blue-500::after, 
 .bg-indigo-600::after,
@@ -544,7 +544,7 @@ button[type="submit"]:hover::after {
 :root.light .bg-blue-600, 
 :root.light .bg-blue-500, 
 :root.light .bg-indigo-600 {
-  background: linear-gradient(135deg, #aa7c11, #845e07) !important;
+  background: linear-gradient(135deg, #e21b1b, #1d4ed8) !important;
   color: #ffffff !important;
 }
 
@@ -553,45 +553,45 @@ button[type="submit"]:hover::after {
 .hover\:bg-blue-600:hover, 
 .bg-blue-600:hover,
 button[type="submit"]:hover {
-  background: linear-gradient(135deg, #f7e7c4 0%, #dfba6b 50%, #c5a059 100%) !important;
-  color: #0d0c0a !important;
-  box-shadow: 0 15px 32px -8px rgba(212, 175, 55, 0.45) !important;
-  border-color: rgba(212, 175, 55, 0.6) !important;
+  background: linear-gradient(135deg, #fef2f2 0%, #ef4444 50%, #2563eb 100%) !important;
+  color: #050306 !important;
+  box-shadow: 0 15px 32px -8px rgba(226, 27, 27, 0.45) !important;
+  border-color: rgba(226, 27, 27, 0.6) !important;
 }
 
 :root.light .hover\:bg-blue-700:hover, 
 :root.light .bg-blue-600:hover {
-  background: linear-gradient(135deg, #dfba6b, #aa7c11) !important;
-  color: #0d0c0a !important;
+  background: linear-gradient(135deg, #e21b1b, #1e40af) !important;
+  color: #ffffff !important;
 }
 
 /* 4. Secondary outlines and borders */
 .border-blue-500\/20, 
 .border-indigo-500\/20,
 a[href="#contact"].border {
-  border: 1px solid rgba(212, 175, 55, 0.2) !important;
-  background: rgba(212, 175, 55, 0.02) !important;
+  border: 1px solid rgba(226, 27, 27, 0.25) !important;
+  background: rgba(226, 27, 27, 0.02) !important;
 }
 
 .border-blue-500\/20:hover, 
 .border-indigo-500\/20:hover,
 a[href="#contact"].border:hover {
-  border-color: rgba(212, 175, 55, 0.5) !important;
-  background: rgba(212, 175, 55, 0.08) !important;
+  border-color: rgba(226, 27, 27, 0.5) !important;
+  background: rgba(226, 27, 27, 0.08) !important;
 }
 
 /* 5. Gradient background mappings (e.g. from-blue-600 to-indigo-500) */
 .from-blue-600, 
 .from-blue-500, 
 .from-indigo-600 {
-  --tw-gradient-from: #dfba6b !important;
-  --tw-gradient-to: #aa7c11 !important;
+  --tw-gradient-from: #e21b1b !important;
+  --tw-gradient-to: #1e40af !important;
   background-image: linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to)) !important;
 }
 .to-indigo-500, 
 .to-cyan-500, 
 .to-blue-500 {
-  --tw-gradient-to: #aa7c11 !important;
+  --tw-gradient-to: #1e40af !important;
 }
 
 /* 6. Form Fields Focus mapping */
@@ -600,18 +600,18 @@ a[href="#contact"].border:hover {
   box-shadow: 0 0 0 4px var(--accent-glow) !important;
 }
 
-/* 7. Dropdown Select Gold Arrow */
+/* 7. Dropdown Select Crimson Arrow */
 select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d4af37'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23e21b1b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: right 16px center !important;
   background-size: 16px 16px !important;
   padding-right: 40px !important;
 }
 
-/* 8. Marquee Ribbon monochrome gold styling */
+/* 8. Marquee Ribbon monochrome accent styling */
 .marquee-track svg {
   color: var(--accent-color) !important;
   stroke: var(--accent-color) !important;
@@ -630,15 +630,15 @@ select {
 
 /* 10. Background Decoration Glow mapping */
 .bg-blue-600\/10, .bg-indigo-600\/10, .bg-blue-500\/5 {
-  background-color: rgba(212, 175, 55, 0.05) !important;
+  background-color: rgba(226, 27, 27, 0.05) !important;
 }
 
 /* 11. Custom highlight animations & hover states */
 .faq-btn:hover {
-  background-color: rgba(212, 175, 55, 0.04) !important;
+  background-color: rgba(226, 27, 27, 0.04) !important;
 }
 .hover\:bg-blue-500\/5:hover {
-  background-color: rgba(212, 175, 55, 0.04) !important;
+  background-color: rgba(226, 27, 27, 0.04) !important;
 }
 .group-hover\:text-blue-500:hover {
   color: var(--accent-color) !important;
@@ -717,7 +717,7 @@ select {
   height: 2.75rem;
   background-color: var(--card-bg) !important;
   color: var(--accent-color) !important;
-  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border: 1px solid rgba(226, 27, 27, 0.35) !important;
   border-radius: 9999px !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(16px) !important;
@@ -738,16 +738,16 @@ select {
 }
 
 :root.light .back-to-top-btn {
-  border-color: rgba(170, 124, 17, 0.4) !important;
-  box-shadow: 0 8px 24px rgba(28, 26, 23, 0.12) !important;
+  border-color: rgba(30, 64, 175, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(18, 14, 30, 0.12) !important;
 }
 
 .back-to-top-btn:hover {
-  background: linear-gradient(135deg, #dfba6b 0%, #aa7c11 100%) !important;
-  color: #000000 !important;
-  border-color: #dfba6b !important;
+  background: linear-gradient(135deg, #e21b1b 0%, #1e40af 100%) !important;
+  color: #ffffff !important;
+  border-color: #e21b1b !important;
   transform: translateY(-4px) scale(1.05) !important;
-  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 12px 30px rgba(226, 27, 27, 0.35) !important;
 }
 
 .back-to-top-btn.visible {
@@ -755,4 +755,143 @@ select {
   pointer-events: auto !important;
   transform: translateY(0) scale(1) !important;
 }
+
+/* ==========================================================================
+   --- ULTRA-SMOOTH PERFORMANCE OVERRIDES (LOW-PERFORMANCE MODE) ---
+   ========================================================================== */
+.glass-panel {
+  will-change: transform, box-shadow, border-color;
+}
+
+header {
+  will-change: transform, background-color;
+}
+
+/* Enable low-perf mode overrides */
+.low-perf .animate-float-slow,
+.low-perf .animate-float-delayed,
+.low-perf .animate-pulse {
+  animation: none !important;
+  transform: none !important;
+}
+
+.low-perf .absolute.rounded-full[class*="blur-"],
+.low-perf .blur-xl,
+.low-perf .blur-2xl,
+.low-perf .blur-3xl {
+  filter: blur(12px) !important; /* drastically lower filter overhead */
+  opacity: 0.015 !important;      /* lower transparency processing cost */
+  will-change: auto !important;
+  transform: none !important;
+}
+
+/* Disable expensive backdrop-filter on low-end or laggy hardware */
+.low-perf header,
+.low-perf .glass-panel,
+.low-perf .faq-item,
+.low-perf .back-to-top-btn {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Fast opaque background fallbacks for low-perf mode to keep readability high without blur */
+.low-perf header {
+  background: rgb(8, 6, 9) !important;
+}
+.low-perf .glass-panel,
+.low-perf .faq-item {
+  background: rgb(12, 8, 15) !important;
+}
+.low-perf .back-to-top-btn {
+  background: rgb(20, 10, 20) !important;
+}
+
+:root.light.low-perf header {
+  background: rgb(241, 245, 249) !important;
+}
+:root.light.low-perf .glass-panel,
+:root.light.low-perf .faq-item {
+  background: rgb(255, 255, 255) !important;
+  border-color: rgba(30, 64, 175, 0.15) !important;
+}
+
+/* Performance Mode Floating Control Style */
+#performance-mode-badge {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(10, 6, 12, 0.9);
+  border: 1px solid rgba(226, 27, 27, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #f8fafc;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.low-perf #performance-mode-badge {
+  border-color: #22c55e; /* Green for energy-saving active */
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.15);
+}
+
+#performance-mode-badge button {
+  background: rgba(226, 27, 27, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(226, 27, 27, 0.3);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.low-perf #performance-mode-badge button {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+#performance-mode-badge button:hover {
+  transform: scale(1.05);
+}
+
+:root.light #performance-mode-badge {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(30, 64, 175, 0.2);
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+:root.light.low-perf #performance-mode-badge {
+  border-color: #16a34a;
+}
+:root.light #performance-mode-badge button {
+  background: rgba(30, 64, 175, 0.1);
+  color: #1e40af;
+  border-color: rgba(30, 64, 175, 0.2);
+}
+:root.light.low-perf #performance-mode-badge button {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+  border-color: rgba(22, 163, 74, 0.2);
+}
+
+@media (max-width: 640px) {
+  #performance-mode-badge {
+    bottom: 1rem;
+    left: 1rem;
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+
 

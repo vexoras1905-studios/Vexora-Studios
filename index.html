@@ -19,7 +19,7 @@
     <meta property="og:image" content="/assets/og-image.jpg" />
 
     <!-- Favicon Placeholder (using SVG inline in modern browsers) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23d4af37'/%3E%3Ctext y='70' x='20' font-family='sans-serif' font-size='70' font-weight='bold' fill='black'%3EV%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23e21b1b'/%3E%3Ctext y='72' x='20' font-family='sans-serif' font-size='65' font-weight='bold' fill='white'%3E🕷️%3C/text%3E%3C/svg%3E" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,16 +65,16 @@
       }
     </style>
   </head>
-  <body class="selection:bg-[#d4af37]/30 selection:text-white">
+  <body class="selection:bg-[#e21b1b]/30 selection:text-white">
 
     <!-- 1. LOADING SCREEN -->
-    <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#040404] transition-opacity duration-500">
+    <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#050306] transition-opacity duration-500">
       <div class="relative flex flex-col items-center gap-4">
-        <!-- Logo Icon with pulsating gold glow -->
-        <div class="relative">
-          <div class="absolute inset-0 bg-[var(--accent-color)] rounded-2xl blur-xl opacity-50 animate-pulse"></div>
-          <div class="relative w-16 h-16 bg-gradient-to-tr from-[#dfba6b] to-[#aa7c11] rounded-2xl flex items-center justify-center font-bold text-2xl text-[#0d0c0a] shadow-xl shadow-[var(--accent-glow)]">
-            V
+        <!-- Logo Icon with pulsating red glow -->
+        <div class="relative animate-float-slow">
+          <div class="absolute inset-0 bg-[#e21b1b]/40 rounded-2xl blur-2xl opacity-75 animate-pulse"></div>
+          <div class="relative w-16 h-16 bg-gradient-to-tr from-[#e21b1b] to-[#1e40af] rounded-2xl flex items-center justify-center font-bold text-2xl text-white shadow-xl shadow-[var(--accent-glow)] border border-white/20">
+            🕷️
           </div>
         </div>
         <!-- Logo Text with loading gradient -->
@@ -83,8 +83,8 @@
           <p class="text-xs text-slate-400 mt-1 tracking-widest uppercase">Digital Craftsmanship</p>
         </div>
         <!-- Progress Bar Indicator -->
-        <div class="w-36 h-0.5 bg-slate-800 rounded-full mt-2 overflow-hidden">
-          <div class="h-full bg-gradient-to-r from-[#dfba6b] to-[#aa7c11] w-2/3 rounded-full animate-infinite"></div>
+        <div class="w-36 h-0.5 bg-slate-900 rounded-full mt-2 overflow-hidden border border-white/5">
+          <div class="h-full bg-gradient-to-r from-[#e21b1b] to-[#1e40af] w-2/3 rounded-full animate-infinite"></div>
         </div>
       </div>
     </div>
@@ -129,17 +129,17 @@
     </script>
 
     <!-- Background Decoration Glows -->
-    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
-    <div class="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-[#aa7c11]/4 rounded-full blur-[160px] pointer-events-none -z-10"></div>
-    <div class="absolute bottom-1/4 left-1/3 w-[500px] h-[500px] bg-[#d4af37]/3 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#e21b1b]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-[#1e40af]/4 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-[500px] h-[500px] bg-[#e21b1b]/3 rounded-full blur-[150px] pointer-events-none -z-10"></div>
 
     <!-- 2. NAVBAR -->
     <header class="sticky top-0 z-40 w-full border-b border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <!-- Brand Logo -->
         <a href="#home" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 bg-gradient-to-tr from-[#dfba6b] to-[#aa7c11] rounded-xl flex items-center justify-center font-bold text-lg text-black transition-transform duration-300 group-hover:scale-105 shadow-md shadow-[var(--accent-glow)]">
-            V
+          <div class="w-10 h-10 bg-gradient-to-tr from-[#e21b1b] to-[#1e40af] rounded-xl flex items-center justify-center font-bold text-lg text-white transition-transform duration-300 group-hover:scale-105 shadow-md shadow-[var(--accent-glow)] border border-white/10">
+            🕷️
           </div>
           <span class="font-['Space_Grotesk'] font-bold text-xl tracking-tight uppercase text-[var(--text-primary)]">
             Vexora<span class="text-[var(--accent-color)]">Studios</span>
@@ -213,29 +213,56 @@
     </header>
 
     <!-- 3. HERO SECTION -->
-    <section id="home" class="min-h-[calc(100vh-80px)] flex items-center justify-center relative px-6 py-12">
-      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="home" class="min-h-[calc(100vh-80px)] flex items-center justify-center relative px-6 py-12 overflow-hidden">
+      <!-- Animated Canvas Background for Web swinging -->
+      <canvas id="web-animation-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
+      
+      <!-- Ambient Aurora Glow & Blobs -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-[#e21b1b]/10 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none -z-10 animate-float-slow"></div>
+      <div class="absolute -top-10 -left-10 w-48 h-48 bg-[#1e40af]/5 rounded-full blur-[80px] pointer-events-none -z-10 animate-float-delayed"></div>
+      
+      <!-- Mouse Glow container -->
+      <div id="hero-mouse-glow" class="absolute top-0 left-0 w-[300px] h-[300px] bg-[#e21b1b]/5 rounded-full blur-[90px] pointer-events-none -z-10 opacity-0 transition-opacity duration-500"></div>
+
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20">
         <!-- Text Content -->
         <div class="lg:col-span-7 flex flex-col justify-center text-left space-y-6 reveal">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--badge-bg)] border border-[var(--card-border)] text-xs font-semibold tracking-wider text-[var(--badge-text)] uppercase self-start">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--badge-bg)] border border-[var(--card-border)] text-xs font-semibold tracking-wider text-[var(--badge-text)] uppercase self-start animate-pulse">
             <span class="w-1.5 h-1.5 bg-[var(--accent-color)] rounded-full animate-ping"></span>
-            Web Design Studio
+            The Web Creators | Spider-Sense UX
           </div>
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-[var(--text-primary)]">
-            Premium Websites <br />
-            That <span class="bg-gradient-to-r from-[#dfba6b] via-[#f7e7c4] to-[#aa7c11] bg-clip-text text-transparent">Turn Visitors</span> <br />
-            Into Clients
+          <h1 class="text-4xl sm:text-5xl md:text-6.5xl font-extrabold tracking-tight leading-[1.1] text-[var(--text-primary)]">
+            We Build Websites <br class="hidden sm:block" />
+            That <span id="typewriter-headline" class="bg-gradient-to-r from-[#e21b1b] via-[#ef4444] to-[#1e40af] bg-clip-text text-transparent">Grow Your Business.</span>
           </h1>
           <p class="text-base sm:text-lg text-[var(--text-secondary)] max-w-xl leading-relaxed">
-            VEXORA Studios builds modern, fast, and responsive websites for businesses, creators, startups, and local brands. Elevate your digital footprint with custom high-end tech design.
+            Premium Websites for Businesses, Creators & Personal Brands. VEXORA Studios engineers world-class bespoke web systems loaded with elegant motion, absolute accessibility, and high performance.
           </p>
           <div class="flex flex-wrap gap-4 pt-2">
-            <a href="#pricing" class="px-8 py-4 bg-gradient-to-r from-[#dfba6b] to-[#aa7c11] hover:from-[#f7e7c4] hover:to-[#dfba6b] text-black font-bold rounded-xl shadow-xl shadow-[var(--accent-glow)] transition-all hover:-translate-y-0.5">
-              View Packages
+            <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-[#e21b1b] to-[#1e40af] hover:from-[#ef4444] hover:to-[#2563eb] text-white font-bold rounded-xl shadow-xl shadow-[var(--accent-glow)] transition-all hover:-translate-y-0.5 inline-flex items-center gap-2 group">
+              Get Started
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
-            <a href="#contact" class="px-8 py-4 border border-[var(--card-border)] hover:border-[var(--accent-color)] hover:bg-[var(--accent-color)]/5 text-[var(--text-primary)] font-bold rounded-xl transition-all hover:-translate-y-0.5">
-              Contact Us
+            <a href="#portfolio" class="px-8 py-4 border border-[var(--card-border)] hover:border-[var(--accent-color)] hover:bg-[var(--accent-color)]/5 text-[var(--text-primary)] font-bold rounded-xl transition-all hover:-translate-y-0.5">
+              View Portfolio
             </a>
+          </div>
+
+          <!-- Trust Badges Block -->
+          <div class="flex flex-wrap gap-x-6 gap-y-4 items-center pt-8 border-t border-[var(--card-border)]/50 mt-8 w-full max-w-xl">
+            <span class="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)]">Agency Standards:</span>
+            <div class="flex items-center gap-2 px-3.5 py-1.5 bg-white/[0.02] border border-white/[0.05] rounded-full text-[11px] text-[var(--text-secondary)] font-medium transition-all hover:bg-white/[0.04]">
+              <svg class="w-3.5 h-3.5 text-[#e21b1b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              <span>100 PageSpeed Rating</span>
+            </div>
+            <div class="flex items-center gap-2 px-3.5 py-1.5 bg-white/[0.02] border border-white/[0.05] rounded-full text-[11px] text-[var(--text-secondary)] font-medium transition-all hover:bg-white/[0.04]">
+              <svg class="w-3.5 h-3.5 text-[#1e40af]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              <span>Awwwards Responsive</span>
+            </div>
+            <div class="flex items-center gap-2 px-3.5 py-1.5 bg-white/[0.02] border border-white/[0.05] rounded-full text-[11px] text-[var(--text-secondary)] font-medium transition-all hover:bg-white/[0.04]">
+              <svg class="w-3.5 h-3.5 text-[#e21b1b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              <span>SEO Structuring</span>
+            </div>
           </div>
         </div>
 
@@ -244,8 +271,8 @@
           <!-- Ambient card style representation -->
           <div class="w-full max-w-md aspect-square glass-panel p-8 relative overflow-hidden animate-float-slow">
             <!-- Floating glows inside the frame -->
-            <div class="absolute -top-12 -right-12 w-48 h-48 bg-[#d4af37]/5 rounded-full blur-2xl"></div>
-            <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-[#aa7c11]/5 rounded-full blur-2xl"></div>
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-[#e21b1b]/10 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-[#1e40af]/10 rounded-full blur-2xl"></div>
 
             <div class="flex flex-col h-full justify-between z-10 relative">
               <!-- Mock Header -->
@@ -255,39 +282,47 @@
                   <div class="w-3 h-3 rounded-full bg-yellow-500/40"></div>
                   <div class="w-3 h-3 rounded-full bg-green-500/40"></div>
                 </div>
-                <div class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">VEXORA CORE v2.0</div>
+                <div class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">VEXORA CORE v3.0</div>
               </div>
 
               <!-- Mock Content Display -->
               <div class="my-auto space-y-4">
-                <div class="w-2/3 h-5 bg-gradient-to-r from-[#dfba6b] to-[#aa7c11] rounded-md"></div>
+                <div class="w-2/3 h-5 bg-gradient-to-r from-[#e21b1b] to-[#1e40af] rounded-md shadow-md shadow-[#e21b1b]/25"></div>
                 <div class="space-y-2">
-                  <div class="w-full h-2.5 bg-slate-800/50 rounded-md"></div>
-                  <div class="w-5/6 h-2.5 bg-slate-800/50 rounded-md"></div>
-                  <div class="w-4/5 h-2.5 bg-slate-800/50 rounded-md"></div>
+                  <div class="w-full h-2.5 bg-slate-900/50 border border-white/5 rounded-md"></div>
+                  <div class="w-5/6 h-2.5 bg-slate-900/50 border border-white/5 rounded-md"></div>
+                  <div class="w-4/5 h-2.5 bg-slate-900/50 border border-white/5 rounded-md"></div>
                 </div>
                 <div class="flex items-center gap-3 pt-2">
-                  <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-white">VS</div>
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#e21b1b] to-[#1e40af] flex items-center justify-center text-xs font-bold text-white shadow-lg shadow-[#e21b1b]/35 border border-white/10">VS</div>
                   <div>
-                    <div class="text-xs font-semibold text-white">Client Engagement</div>
-                    <div class="text-[9px] text-green-400 font-medium">● Conversions +142%</div>
+                    <div class="text-xs font-semibold text-white">Conversion Optimization</div>
+                    <div class="text-[9px] text-[#e21b1b] font-medium">● Interactive UX Active</div>
                   </div>
                 </div>
               </div>
 
               <!-- Metrics -->
-              <div class="grid grid-cols-2 gap-4 border-t border-slate-800/80 pt-4">
+              <div class="grid grid-cols-2 gap-4 border-t border-slate-900/80 pt-4">
                 <div>
                   <div class="text-2xl font-bold font-['Space_Grotesk'] text-white">100%</div>
-                  <div class="text-[9px] text-slate-400 uppercase tracking-wider">Mobile Optimized</div>
+                  <div class="text-[9px] text-slate-400 uppercase tracking-wider">Device Adaptive</div>
                 </div>
                 <div>
-                  <div class="text-2xl font-bold font-['Space_Grotesk'] text-white">&lt;0.8s</div>
-                  <div class="text-[9px] text-slate-400 uppercase tracking-wider">Load Time</div>
+                  <div class="text-2xl font-bold font-['Space_Grotesk'] text-white">&lt;0.6s</div>
+                  <div class="text-[9px] text-slate-400 uppercase tracking-wider">Time to Interactive</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none select-none text-[10px] uppercase tracking-widest text-[var(--text-secondary)] opacity-60">
+        <span>Scroll</span>
+        <div class="w-5 h-8.5 rounded-full border border-white/30 flex justify-center p-1.5">
+          <div class="w-1 h-2 bg-[var(--accent-color)] rounded-full animate-bounce"></div>
         </div>
       </div>
     </section>
@@ -297,24 +332,57 @@
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <!-- Image Placeholder Visual -->
+          <!-- Modern Luxury Mockup/Visual Area -->
           <div class="lg:col-span-5 reveal flex justify-center">
-            <div class="relative w-full max-w-md aspect-video md:aspect-square rounded-3xl overflow-hidden border border-[var(--card-border)] shadow-xl group animate-float-delayed">
-              <!-- Dark premium abstract grid -->
-              <div class="absolute inset-0 bg-[#0c0c0b] flex flex-col justify-center items-center p-8">
-                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 20px 20px;"></div>
-                <svg class="w-16 h-16 text-[var(--accent-color)] mb-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 .364l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-                <div class="text-center font-['Space_Grotesk'] text-lg font-bold text-white uppercase">VEXORA Philosophy</div>
-                <div class="text-center text-xs text-slate-400 mt-2 max-w-xs leading-relaxed">
-                  We merge strategic business principles with luxury tech UI layouts to produce conversion-focused web systems.
+            <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border border-[var(--card-border)] bg-[#07050d] shadow-2xl p-6 flex flex-col justify-between group animate-float-delayed">
+              <!-- Floating decorative glows -->
+              <div class="absolute -top-16 -right-16 w-36 h-36 bg-[#e21b1b]/15 rounded-full blur-2xl transition-transform duration-700 group-hover:scale-110"></div>
+              <div class="absolute -bottom-16 -left-16 w-36 h-36 bg-[#1e40af]/10 rounded-full blur-2xl transition-transform duration-700 group-hover:scale-110"></div>
+              <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none"></div>
+
+              <!-- Top Panel Bar -->
+              <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                <div class="flex gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-500/30"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/30"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-500/30"></span>
+                </div>
+                <span class="text-[9px] text-[#9c99a8] font-mono tracking-widest uppercase">DESIGN PHILOSOPHY</span>
+              </div>
+
+              <!-- Center Interactive-looking Display -->
+              <div class="my-auto py-8 flex flex-col items-center justify-center space-y-4">
+                <div class="relative">
+                  <div class="absolute inset-0 bg-[#e21b1b]/30 rounded-full blur-xl animate-pulse"></div>
+                  <div class="relative w-20 h-20 bg-gradient-to-tr from-[#e21b1b] to-[#1e40af] rounded-2xl flex items-center justify-center border border-white/20 shadow-lg shadow-[#e21b1b]/20 transition-transform duration-500 group-hover:rotate-12">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l3.582-1.341c.216-.081.454-.081.67 0L16.83 21l-.813-5.096c-.037-.233.042-.47.218-.634l3.702-3.477-5.185-.438c-.237-.02-.442-.17-.53-.393L12 6.579 9.944 11.2a.526.526 0 01-.53.393l-5.185.438 3.702 3.477c.176.164.255.401.218.634z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <h4 class="text-sm font-semibold text-white tracking-wide">bespoke execution</h4>
+                  <p class="text-[11px] text-[#9c99a8] mt-1 max-w-[240px] leading-relaxed">
+                    we do not use pre-built template frameworks. every script is handcrafted for maximum search ranking and fluidity.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Bottom Stat Panel -->
+              <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-4 flex items-center justify-between">
+                <div>
+                  <div class="text-[10px] text-slate-500 font-mono">RENDER PIPELINE</div>
+                  <div class="text-xs font-semibold text-white mt-0.5">SSR + Client Hydration</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-[10px] text-slate-500 font-mono">GLOBAL DISPATCH</div>
+                  <div class="text-xs font-semibold text-[#e21b1b] mt-0.5">● Optimized CDN</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Description -->
+          <!-- Description and Numeric Counters -->
           <div class="lg:col-span-7 flex flex-col space-y-6 justify-center text-left reveal">
             <div class="text-xs font-bold uppercase tracking-widest text-[var(--accent-color)]">About Vexora</div>
             <h2 class="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] tracking-tight text-[var(--text-primary)]">
@@ -327,18 +395,34 @@
               Every system we construct is meticulously custom-coded, guaranteeing blazing-fast loading speeds, clean layouts, accessible typography, and absolute responsiveness across every screen size. We skip the heavy dependencies to deliver lightweight codebases that rank higher and perform better.
             </p>
             
-            <div class="grid grid-cols-3 gap-6 pt-4 border-t border-[var(--card-border)]">
+            <!-- Statistics Grid with Animated Counter Data Tags -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-[var(--card-border)]">
               <div>
-                <div class="text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-[var(--accent-color)]">100%</div>
-                <div class="text-xs text-[var(--text-secondary)] mt-1">Responsive Precision</div>
+                <div class="flex items-baseline gap-1">
+                  <span class="stat-number text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-[var(--accent-color)]" data-target="140">0</span>
+                  <span class="text-xl font-bold text-[var(--accent-color)]">+</span>
+                </div>
+                <div class="text-[10px] sm:text-xs text-[var(--text-secondary)] mt-1 tracking-wider uppercase font-mono">Projects Done</div>
               </div>
               <div>
-                <div class="text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-[var(--accent-color)]">&lt;1s</div>
-                <div class="text-xs text-[var(--text-secondary)] mt-1">Average Page Load</div>
+                <div class="flex items-baseline gap-1">
+                  <span class="stat-number text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-[var(--accent-color)]" data-target="98">0</span>
+                  <span class="text-xl font-bold text-[var(--accent-color)]">%</span>
+                </div>
+                <div class="text-[10px] sm:text-xs text-[var(--text-secondary)] mt-1 tracking-wider uppercase font-mono">Happy Clients</div>
               </div>
               <div>
-                <div class="text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-[var(--accent-color)]">10+</div>
-                <div class="text-xs text-[var(--text-secondary)] mt-1">Global Services</div>
+                <div class="flex items-baseline gap-1">
+                  <span class="stat-number text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-[var(--accent-color)]" data-target="15">0</span>
+                  <span class="text-xl font-bold text-[var(--accent-color)]">+</span>
+                </div>
+                <div class="text-[10px] sm:text-xs text-[var(--text-secondary)] mt-1 tracking-wider uppercase font-mono">Countries</div>
+              </div>
+              <div>
+                <div class="flex items-baseline gap-1">
+                  <span class="text-2xl sm:text-3xl font-extrabold font-['Space_Grotesk'] text-[var(--accent-color)]">24/7</span>
+                </div>
+                <div class="text-[10px] sm:text-xs text-[var(--text-secondary)] mt-1 tracking-wider uppercase font-mono">Support</div>
               </div>
             </div>
           </div>
@@ -360,33 +444,113 @@
             High-performance web systems engineered to streamline client acquisition and amplify brand value.
           </p>
         </div>
-
-        <!-- Services Grid (2 services left) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- Services Grid (All 8 Core Studio Offerings) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           
-          <!-- Service 1: Business Websites -->
-          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
-            <div class="w-12 h-12 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          <!-- Service 1: Spider-Sense UX Design -->
+          <div class="glass-panel p-6 rounded-2xl flex flex-col text-left reveal hover-lift">
+            <div class="w-11 h-11 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-5">
+              <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">Business Websites</h3>
-            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
-              Premium corporate web presences with robust, responsive architectures that express credibility and turn passive visits into warm inquiries.
+            <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2.5">Spider-Sense UX Design</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-grow">
+              We architect interfaces that anticipate user clicks with precognitive precision. High-contrast, accessibility-first interfaces engineered for natural cognitive flow.
             </p>
           </div>
 
-          <!-- Service 2: E-commerce Website Design -->
-          <div class="glass-panel p-8 rounded-2xl flex flex-col text-left reveal">
-            <div class="w-12 h-12 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-6">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          <!-- Service 2: Web-Slinging Load Speeds -->
+          <div class="glass-panel p-6 rounded-2xl flex flex-col text-left reveal hover-lift">
+            <div class="w-11 h-11 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-5">
+              <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-3">E-commerce Website Design</h3>
-            <p class="text-sm text-[var(--text-secondary)] leading-relaxed flex-grow">
-              Streamlined product grid systems and clear carts that provide premium visual display for products. Frictionless navigation that boosts checkout conversion.
+            <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2.5">Web-Slinging Speed</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Insanely fast loading speeds (sub-500ms) powered by lightweight edge-cached web bundles and highly compressed Next-Gen assets.
+            </p>
+          </div>
+
+          <!-- Service 3: Arachnid Code Systems -->
+          <div class="glass-panel p-6 rounded-2xl flex flex-col text-left reveal hover-lift">
+            <div class="w-11 h-11 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-5">
+              <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2.5">Arachnid Code Architectures</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Clean, resilient, and robust TypeScript structures compiled with zero-overhead bundlers and tailored for total cross-platform response.
+            </p>
+          </div>
+
+          <!-- Service 4: Symbiote Brand Identity -->
+          <div class="glass-panel p-6 rounded-2xl flex flex-col text-left reveal hover-lift">
+            <div class="w-11 h-11 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-5">
+              <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-3" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2.5">Symbiote Brand Fusion</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Stunning, premium motion graphics, high-contrast layouts, and customized layouts that seamlessly bond with your core brand message.
+            </p>
+          </div>
+
+          <!-- Service 5: Thwip Payments -->
+          <div class="glass-panel p-6 rounded-2xl flex flex-col text-left reveal hover-lift">
+            <div class="w-11 h-11 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-5">
+              <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2.5">Thwip Payment Systems</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Secure payment pipelines and dynamic multi-currency gateways integrated with Stripe and Razorpay under high-fidelity encryption.
+            </p>
+          </div>
+
+          <!-- Service 6: Daily Bugle Editorial Hubs -->
+          <div class="glass-panel p-6 rounded-2xl flex flex-col text-left reveal hover-lift">
+            <div class="w-11 h-11 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-5">
+              <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1M19 20a2 2 0 002-2V8a2 2 0 00-2-2h-5" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2.5">Daily Bugle Headless CMS</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Custom content hubs optimized for lightning-fast publication, gorgeous image portfolios, and search engine discoverability.
+            </p>
+          </div>
+
+          <!-- Service 7: Nano-Tech Maintenance -->
+          <div class="glass-panel p-6 rounded-2xl flex flex-col text-left reveal hover-lift">
+            <div class="w-11 h-11 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-5">
+              <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2.5">Nano-Tech SLA Support</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Persistent cloud monitoring, automated daily dependency upgrades, regular backup rotations, and real-time security scanning.
+            </p>
+          </div>
+
+          <!-- Service 8: Multiverse Booking Systems -->
+          <div class="glass-panel p-6 rounded-2xl flex flex-col text-left reveal hover-lift">
+            <div class="w-11 h-11 rounded-xl bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)] mb-5">
+              <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2.5">Multiverse Appointment Engines</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-grow">
+              Intuitive, interactive reservation flows with real-time slot optimization, automatic reminders, and calendar integrations.
             </p>
           </div>
 
@@ -633,7 +797,7 @@
           <!-- Tier 2: Standard Website (Featured) -->
           <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between text-left relative border-[var(--accent-color)]/50 shadow-xl shadow-[var(--accent-glow)]/30 transform scale-102 reveal">
             <!-- Best Seller Badge -->
-            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#dfba6b] to-[#aa7c11] text-black font-bold text-[10px] uppercase tracking-wider shadow-lg shadow-[var(--accent-glow)]">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#e21b1b] to-[#1e40af] text-white font-extrabold text-[10px] uppercase tracking-wider shadow-lg shadow-[var(--accent-glow)]">
               Best Choice
             </div>
 
@@ -685,7 +849,7 @@
             </div>
 
             <div class="pt-8">
-              <a href="#contact" class="block text-center w-full py-3 bg-gradient-to-r from-[#dfba6b] to-[#aa7c11] hover:from-[#f7e7c4] hover:to-[#dfba6b] text-black font-bold rounded-xl shadow-lg shadow-[var(--accent-glow)] transition-all">
+              <a href="#contact" class="block text-center w-full py-3 bg-gradient-to-r from-[#e21b1b] to-[#1e40af] hover:from-[#ef4444] hover:to-[#2563eb] text-white font-bold rounded-xl shadow-lg shadow-red-500/20 transition-all">
                 Select Standard Plan
               </a>
             </div>
@@ -780,35 +944,35 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           <!-- Project 1: Restaurant Website -->
-          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
+          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal border border-white/5 shadow-2xl transition-all duration-500 hover:shadow-purple-500/10">
             <!-- Visual Thumbnail Mockup (Pure HTML/CSS) -->
-            <div class="relative aspect-video w-full overflow-hidden bg-[#0c0c0b] border-b border-white/5 flex flex-col group/mockup select-none">
+            <div class="relative aspect-video w-full overflow-hidden bg-[#0a070f] border-b border-white/5 flex flex-col group/mockup select-none">
               <!-- Top browser address bar -->
-              <div class="w-full h-5 bg-[#0e0e0e] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
+              <div class="w-full h-5 bg-[#08050c] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
                 <div class="flex items-center gap-1">
-                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/50"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/40"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/40"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/40"></span>
                 </div>
                 <div class="bg-white/5 border border-white/5 rounded-md px-2 py-0.5 text-[7px] text-white/30 font-mono scale-90 w-36 text-center truncate">
-                  https://spicehouse.vexora.com
+                  https://maisonviolette.vexora.com
                 </div>
                 <div class="w-4"></div>
               </div>
 
-              <!-- Page content wrapper (moves/scales slightly on card hover) -->
-              <div class="flex-grow w-full relative overflow-hidden bg-[#0f0e0c] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-105">
-                <!-- Warm luxury ambiance gradient -->
-                <div class="absolute -top-10 -right-10 w-24 h-24 bg-orange-600/10 rounded-full blur-xl pointer-events-none"></div>
-                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-yellow-600/5 rounded-full blur-xl pointer-events-none"></div>
+              <!-- Page content wrapper -->
+              <div class="flex-grow w-full relative overflow-hidden bg-[#0a0404] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                <!-- Luxury ambient gradients -->
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-red-500/10 rounded-full blur-xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-[#1e40af]/5 rounded-full blur-xl pointer-events-none"></div>
 
                 <!-- Tiny Website Header -->
                 <div class="flex items-center justify-between border-b border-white/5 pb-1.5 mb-2 shrink-0">
-                  <span class="text-[9px] font-['Space_Grotesk'] font-bold text-orange-400 tracking-wider">L'AMBROISIE</span>
-                  <div class="flex gap-2 text-[7px] text-white/40">
+                  <span class="text-[8px] font-['Space_Grotesk'] font-extrabold text-[#e21b1b] tracking-wider">MAISON CRIMSON</span>
+                  <div class="flex gap-2 text-[6px] text-white/40 font-mono">
                     <span>Menu</span>
-                    <span>Reservations</span>
-                    <span>About</span>
+                    <span>Reserve</span>
+                    <span>Lounge</span>
                   </div>
                 </div>
 
@@ -816,99 +980,95 @@
                 <div class="flex-grow grid grid-cols-12 gap-2 items-center">
                   <!-- Left Text Column -->
                   <div class="col-span-7 flex flex-col text-left space-y-1">
-                    <span class="text-[6px] text-orange-400/80 font-mono tracking-widest uppercase">Michelin Star dining</span>
-                    <h4 class="text-[11px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
-                      Crafting Culinary Masterpieces
+                    <span class="text-[5px] text-[#1e40af] font-mono tracking-widest uppercase">gastronomic poetry</span>
+                    <h4 class="text-[10px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
+                      Bespoke Culinary High Art
                     </h4>
-                    <p class="text-[6.5px] text-white/50 leading-snug">
-                      Experience rare white truffle delicacies, wood-fired mains, and masterfully aged vintage wines.
+                    <p class="text-[5.5px] text-slate-400 leading-snug">
+                      Rare forest truffle emulsions, dry-aged wild venison, and selection of aged grand cru cellar vintages.
                     </p>
-                    <div class="pt-1 flex gap-1.5">
-                      <span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-400 text-[6px] font-bold border border-orange-500/30">
+                    <div class="pt-1 flex gap-1">
+                      <span class="px-1.5 py-0.5 rounded bg-red-500/20 text-[#e21b1b] text-[5px] font-bold border border-red-500/30">
                         Book Table
                       </span>
-                      <span class="px-2 py-0.5 rounded bg-white/5 text-white/40 text-[6px] font-medium border border-white/5">
-                        View Menu
+                      <span class="px-1.5 py-0.5 rounded bg-white/5 text-white/30 text-[5px] font-medium border border-white/5">
+                        The Menu
                       </span>
                     </div>
                   </div>
 
-                  <!-- Right Dish Mockup Column -->
-                  <div class="col-span-5 flex items-center justify-center relative">
-                    <!-- Elegant Abstract CSS Plate -->
-                    <div class="relative w-16 h-16 rounded-full border border-orange-500/20 flex items-center justify-center bg-black/40 shadow-lg animate-float-slow">
-                      <div class="w-12 h-12 rounded-full border border-dashed border-orange-500/30 flex items-center justify-center">
-                        <!-- Food core representation -->
-                        <div class="w-7 h-7 rounded-full bg-gradient-to-br from-amber-600 to-orange-700 shadow-inner flex items-center justify-center">
-                          <!-- Herb garnish dots -->
-                          <span class="absolute top-5 right-7 w-1 h-1 rounded-full bg-green-400/80"></span>
-                          <span class="absolute bottom-6 right-6 w-0.5 h-0.5 rounded-full bg-yellow-400/90"></span>
-                          <span class="absolute top-6 left-7 w-1 h-1 rounded-full bg-emerald-400/80"></span>
+                  <!-- Right Plate Column -->
+                  <div class="col-span-5 flex items-center justify-center">
+                    <div class="relative w-14 h-14 rounded-full border border-red-500/20 flex items-center justify-center bg-black/50 shadow-2xl animate-float-slow">
+                      <div class="w-10 h-10 rounded-full border border-dashed border-red-500/30 flex items-center justify-center">
+                        <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-[#e21b1b] to-[#1e40af] shadow-inner flex items-center justify-center">
+                          <!-- Micro food garnish -->
+                          <span class="absolute top-4 right-5 w-0.5 h-0.5 rounded-full bg-green-300"></span>
+                          <span class="absolute bottom-5 right-5 w-0.5 h-0.5 rounded-full bg-yellow-200"></span>
                         </div>
                       </div>
-                      <!-- Plate shine glare overlay -->
-                      <div class="absolute inset-1 rounded-full bg-gradient-to-tr from-white/0 via-white/5 to-transparent pointer-events-none"></div>
+                      <div class="absolute inset-0.5 rounded-full bg-gradient-to-tr from-white/0 via-white/5 to-transparent pointer-events-none"></div>
                     </div>
                   </div>
                 </div>
 
                 <!-- Bottom miniature strip -->
-                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[6px] text-white/30 font-mono shrink-0">
-                  <span>Chef's Special: Truffle Tagliolini</span>
-                  <span class="text-orange-400/80 font-bold">$38</span>
+                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[5px] text-slate-500 font-mono shrink-0">
+                  <span>Tonight's Tasting: Violet Soufflé</span>
+                  <span class="text-[#c084fc] font-bold">Menu Étoile</span>
                 </div>
               </div>
 
-              <!-- Specular Gloss Overlays -->
-              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] pointer-events-none z-10"></div>
+              <!-- Reflection Glare Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.05] pointer-events-none z-10"></div>
             </div>
             <!-- Details -->
             <div class="p-6 flex-grow flex flex-col justify-between text-left">
               <div>
-                <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Restaurant Website</h3>
-                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
-                  Visual menus, interactive reservations layout, fast-loading gourmet imagery placeholders, and elegant location listings.
+                <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Restaurant Website</h3>
+                <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Sophisticated menus, integrated booking APIs, optimized media caching for gourmet photography, and elegant geolocation.
                 </p>
               </div>
               <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
-                <span class="text-xs text-[var(--text-secondary)] font-medium">Responsive Layout</span>
+                <span class="text-xs text-[var(--text-secondary)] font-medium">Luxury Culinary</span>
                 <span class="portfolio-demo-btn text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1 cursor-pointer" data-demo-title="Restaurant Website" data-demo-url="">
-                  View Live Demo ↗
+                  View Demo ↗
                 </span>
               </div>
             </div>
           </div>
 
           <!-- Project 2: Fitness Trainer Website -->
-          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
+          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal border border-white/5 shadow-2xl transition-all duration-500 hover:shadow-purple-500/10">
             <!-- Visual Thumbnail Mockup (Pure HTML/CSS) -->
-            <div class="relative aspect-video w-full overflow-hidden bg-[#0c0c0b] border-b border-white/5 flex flex-col group/mockup select-none">
+            <div class="relative aspect-video w-full overflow-hidden bg-[#08050c] border-b border-white/5 flex flex-col group/mockup select-none">
               <!-- Top browser address bar -->
-              <div class="w-full h-5 bg-[#0e0e0e] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
+              <div class="w-full h-5 bg-[#060409] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
                 <div class="flex items-center gap-1">
-                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/50"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/40"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/40"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/40"></span>
                 </div>
                 <div class="bg-white/5 border border-white/5 rounded-md px-2 py-0.5 text-[7px] text-white/30 font-mono scale-90 w-36 text-center truncate">
-                  https://peakfitness.vexora.com
+                  https://apexbeast.vexora.com
                 </div>
                 <div class="w-4"></div>
               </div>
 
-              <!-- Page content wrapper (moves/scales slightly on card hover) -->
-              <div class="flex-grow w-full relative overflow-hidden bg-[#0a0f0d] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-105">
-                <!-- Neon energetic ambiance gradient -->
-                <div class="absolute -top-10 -right-10 w-24 h-24 bg-emerald-600/10 rounded-full blur-xl pointer-events-none"></div>
-                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-teal-600/5 rounded-full blur-xl pointer-events-none"></div>
+              <!-- Page content wrapper -->
+              <div class="flex-grow w-full relative overflow-hidden bg-[#040206] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                <!-- Energetic ambient gradients -->
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-red-600/10 rounded-full blur-xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-[#1e40af]/5 rounded-full blur-xl pointer-events-none"></div>
 
                 <!-- Tiny Website Header -->
                 <div class="flex items-center justify-between border-b border-white/5 pb-1.5 mb-2 shrink-0">
-                  <span class="text-[9px] font-['Space_Grotesk'] font-bold text-emerald-400 tracking-wider">APEX ATHLETES</span>
-                  <div class="flex gap-2 text-[7px] text-white/40">
-                    <span>Programs</span>
-                    <span>Schedule</span>
-                    <span>Pricing</span>
+                  <span class="text-[8px] font-['Space_Grotesk'] font-extrabold text-[#e21b1b] tracking-wider">APEX ATHLETE</span>
+                  <div class="flex gap-2 text-[6px] text-white/40 font-mono">
+                    <span>Grid</span>
+                    <span>Metrics</span>
+                    <span>Join</span>
                   </div>
                 </div>
 
@@ -916,169 +1076,152 @@
                 <div class="flex-grow grid grid-cols-12 gap-2 items-center">
                   <!-- Left Text Column -->
                   <div class="col-span-7 flex flex-col text-left space-y-1">
-                    <span class="text-[6px] text-emerald-400/80 font-mono tracking-widest uppercase">Elite performance training</span>
-                    <h4 class="text-[11px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
-                      Unleash Your Ultimate Self
+                    <span class="text-[5px] text-[#1e40af] font-mono tracking-widest uppercase">scientific hyper-growth</span>
+                    <h4 class="text-[10px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
+                      Break Your Physical Limits
                     </h4>
                     
-                    <!-- Transformation Progress Mockup -->
-                    <div class="bg-black/40 border border-white/5 rounded p-1 space-y-1 mt-0.5">
-                      <div class="flex justify-between items-center text-[5px] text-white/50">
-                        <span>Fat loss progress</span>
-                        <span class="text-emerald-400">-12.4%</span>
+                    <!-- Progress Bar Component -->
+                    <div class="bg-white/[0.02] border border-white/5 rounded p-1 space-y-0.5 mt-0.5 max-w-[110px]">
+                      <div class="flex justify-between items-center text-[4.5px] text-slate-400">
+                        <span>LBM Increase</span>
+                        <span class="text-[#e21b1b] font-bold">+8.4%</span>
                       </div>
-                      <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
-                        <div class="w-4/5 h-full bg-emerald-400 rounded-full"></div>
+                      <div class="w-full h-0.75 bg-white/5 rounded-full overflow-hidden">
+                        <div class="w-5/6 h-full bg-gradient-to-r from-[#e21b1b] to-[#1e40af] rounded-full"></div>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Right Pricing Card Mockup Column -->
-                  <div class="col-span-5 flex items-center justify-center relative">
-                    <!-- Miniature Pricing Card -->
-                    <div class="w-full bg-black/60 border border-emerald-500/30 rounded p-1.5 text-center shadow-lg relative">
-                      <div class="absolute top-0 right-1 px-1 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/30 text-[4px] text-emerald-400 uppercase font-bold scale-90">
-                        Best value
+                  <!-- Right Miniature Pricing Card Column -->
+                  <div class="col-span-5 flex items-center justify-center">
+                    <div class="w-full bg-black/60 border border-[#e21b1b]/30 rounded p-1 text-center shadow-lg">
+                      <h5 class="text-[4.5px] text-slate-400 uppercase font-mono">ELITE ACCESS</h5>
+                      <div class="text-[10px] font-bold text-white font-['Space_Grotesk'] mt-0.5">
+                        $29<span class="text-[5px] font-normal text-slate-400">/mo</span>
                       </div>
-                      <h5 class="text-[6px] text-white/50 uppercase font-mono tracking-wider">PRO COACHING</h5>
-                      <div class="text-[12px] font-bold text-white font-['Space_Grotesk'] mt-0.5">
-                        $49<span class="text-[6px] font-normal text-white/40">/mo</span>
-                      </div>
-                      <div class="space-y-0.5 my-1 text-left">
-                        <div class="flex items-center gap-0.5 text-[5px] text-white/60">
-                          <span class="text-emerald-400">✓</span> 1-on-1 Guidance
-                        </div>
-                        <div class="flex items-center gap-0.5 text-[5px] text-white/60">
-                          <span class="text-emerald-400">✓</span> Nutrition Planner
-                        </div>
-                      </div>
-                      <span class="w-full block text-center py-0.5 bg-emerald-400 text-black text-[5px] font-bold rounded">
-                        Join Apex
+                      <span class="w-full block text-center py-0.5 bg-[#e21b1b] text-white text-[4.5px] font-bold rounded mt-1">
+                        Go Apex
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <!-- Bottom stats badge -->
-                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[6px] text-white/30 font-mono shrink-0">
-                  <span>Current active athletes: 1,420+</span>
-                  <span class="text-emerald-400 font-bold">● Live</span>
+                <!-- Bottom miniature strip -->
+                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[5px] text-slate-500 font-mono shrink-0">
+                  <span>Current active beasts: 2,890+</span>
+                  <span class="text-[#e21b1b] font-bold">● Live Portal</span>
                 </div>
               </div>
 
-              <!-- Specular Gloss Overlays -->
-              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] pointer-events-none z-10"></div>
+              <!-- Reflection Glare Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.05] pointer-events-none z-10"></div>
             </div>
             <!-- Details -->
             <div class="p-6 flex-grow flex flex-col justify-between text-left">
               <div>
-                <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Fitness Trainer Website</h3>
-                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
-                  Crisp program listings, dynamic client transformation grids, simplified pricing, and built-in calendar appointment links.
+                <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Fitness Trainer Website</h3>
+                <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Aggressive athletic grids, custom interactive caloric charts, real-time client testimonial carousels, and automated scheduler integrations.
                 </p>
               </div>
               <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
-                <span class="text-xs text-[var(--text-secondary)] font-medium">Conversion Funnel</span>
+                <span class="text-xs text-[var(--text-secondary)] font-medium">Hyper-Growth Funnel</span>
                 <span class="portfolio-demo-btn text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1 cursor-pointer" data-demo-title="Fitness Trainer Website" data-demo-url="">
-                  View Live Demo ↗
+                  View Demo ↗
                 </span>
               </div>
             </div>
           </div>
 
           <!-- Project 3: Portfolio Website -->
-          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal">
+          <div class="glass-panel rounded-2xl overflow-hidden flex flex-col group reveal border border-white/5 shadow-2xl transition-all duration-500 hover:shadow-purple-500/10">
             <!-- Visual Thumbnail Mockup (Pure HTML/CSS) -->
-            <div class="relative aspect-video w-full overflow-hidden bg-[#0c0c0b] border-b border-white/5 flex flex-col group/mockup select-none">
+            <div class="relative aspect-video w-full overflow-hidden bg-[#07050a] border-b border-white/5 flex flex-col group/mockup select-none">
               <!-- Top browser address bar -->
-              <div class="w-full h-5 bg-[#0e0e0e] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
+              <div class="w-full h-5 bg-[#050308] border-b border-white/5 px-3 flex items-center justify-between shrink-0">
                 <div class="flex items-center gap-1">
-                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/50"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/50"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-500/40"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/40"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500/40"></span>
                 </div>
                 <div class="bg-white/5 border border-white/5 rounded-md px-2 py-0.5 text-[7px] text-white/30 font-mono scale-90 w-36 text-center truncate">
-                  https://eliteportfolio.vexora.com
+                  https://executive.vexora.com
                 </div>
                 <div class="w-4"></div>
               </div>
 
-              <!-- Page content wrapper (moves/scales slightly on card hover) -->
-              <div class="flex-grow w-full relative overflow-hidden bg-[#07080a] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-105">
-                <!-- Luxury minimalist gold ambiance gradient -->
-                <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#dfba6b]/10 rounded-full blur-xl pointer-events-none"></div>
-                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-[#aa7c11]/5 rounded-full blur-xl pointer-events-none"></div>
+              <!-- Page content wrapper -->
+              <div class="flex-grow w-full relative overflow-hidden bg-[#040206] flex flex-col p-3 transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                <!-- Luxury ambient gradients -->
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-red-500/10 rounded-full blur-xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-[#1e40af]/5 rounded-full blur-xl pointer-events-none"></div>
 
                 <!-- Tiny Website Header -->
                 <div class="flex items-center justify-between border-b border-white/5 pb-1.5 mb-2 shrink-0">
-                  <span class="text-[9px] font-['Space_Grotesk'] font-bold text-[#dfba6b] tracking-wider">ELITE CREATIVE</span>
-                  <div class="flex gap-2 text-[7px] text-white/40">
-                    <span>Work</span>
-                    <span>About</span>
+                  <span class="text-[8px] font-['Space_Grotesk'] font-extrabold text-[#e21b1b] tracking-wider">ELITE EXECUTIVE</span>
+                  <div class="flex gap-2 text-[6px] text-white/40 font-mono">
+                    <span>Studio</span>
+                    <span>Roster</span>
                     <span>Resume ↗</span>
                   </div>
                 </div>
 
-                <!-- Main Layout (Laptop/Studio Screen Mockup style) -->
+                <!-- Main Layout -->
                 <div class="flex-grow grid grid-cols-12 gap-2 items-center">
                   <!-- Left Text Column -->
                   <div class="col-span-7 flex flex-col text-left space-y-1">
-                    <span class="text-[6px] text-[#dfba6b]/80 font-mono tracking-widest uppercase">Senior interaction designer</span>
-                    <h4 class="text-[11px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
-                      Crafting Award-Winning Digital Art
+                    <span class="text-[5px] text-[#1e40af] font-mono tracking-widest uppercase">Principal Developer & Designer</span>
+                    <h4 class="text-[10px] font-bold font-['Space_Grotesk'] text-white tracking-tight leading-tight">
+                      Crafting Interactive Masterpieces
                     </h4>
-                    <p class="text-[6.5px] text-white/50 leading-snug">
-                      Translating brand principles into breathtaking, high-performance web applications.
+                    <p class="text-[5.5px] text-slate-400 leading-snug">
+                      Translating high-impact enterprise goals into world-class fluid user experiences.
                     </p>
-                    <div class="pt-1 flex gap-1.5">
-                      <span class="px-2 py-0.5 rounded bg-white/10 text-white text-[5px] font-bold border border-white/10">
-                        View Work
-                      </span>
-                    </div>
                   </div>
 
-                  <!-- Right Bento Grid Mockup Column -->
-                  <div class="col-span-5 grid grid-cols-2 gap-1 relative">
-                    <!-- Bento item 1 -->
-                    <div class="bg-white/5 border border-white/5 rounded p-1 flex flex-col justify-between text-left h-8">
-                      <span class="text-[4px] text-white/40 uppercase font-mono">Experience</span>
-                      <span class="text-[7px] font-bold text-white font-['Space_Grotesk']">8+ Years</span>
+                  <!-- Right Bento Grid Column -->
+                  <div class="col-span-5 grid grid-cols-2 gap-1">
+                    <!-- Bento cell 1 -->
+                    <div class="bg-white/[0.02] border border-white/5 rounded p-1 flex flex-col justify-between text-left h-7">
+                      <span class="text-[3px] text-slate-500 uppercase font-mono">Tenure</span>
+                      <span class="text-[6.5px] font-extrabold text-white font-['Space_Grotesk']">10+ Yrs</span>
                     </div>
-                    <!-- Bento item 2 -->
-                    <div class="bg-[#dfba6b]/10 border border-[#dfba6b]/20 rounded p-1 flex flex-col justify-between text-left h-8">
-                      <span class="text-[4px] text-[#dfba6b] uppercase font-mono">Awwwards</span>
-                      <span class="text-[7px] font-bold text-[#dfba6b] font-['Space_Grotesk']">12 Gold</span>
+                    <!-- Bento cell 2 -->
+                    <div class="bg-purple-500/10 border border-purple-500/20 rounded p-1 flex flex-col justify-between text-left h-7">
+                      <span class="text-[3px] text-[#c084fc] uppercase font-mono">Awards</span>
+                      <span class="text-[6.5px] font-extrabold text-[#c084fc] font-['Space_Grotesk']">16 Gold</span>
                     </div>
-                    <!-- Bento item 3 (spans full width) -->
-                    <div class="col-span-2 bg-white/5 border border-white/5 rounded p-1 flex justify-between items-center h-5">
-                      <span class="text-[5px] text-white/60">Creative Portfolio 2026</span>
-                      <span class="text-[5px] text-[#dfba6b]">↗</span>
+                    <!-- Bento cell 3 -->
+                    <div class="col-span-2 bg-white/[0.02] border border-white/5 rounded p-1 flex justify-between items-center h-4">
+                      <span class="text-[4.5px] text-slate-400">Creative Reel 2026</span>
+                      <span class="text-[4.5px] text-[#c084fc]">↗</span>
                     </div>
                   </div>
                 </div>
 
                 <!-- Bottom miniature strip -->
-                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[6px] text-white/30 font-mono shrink-0">
-                  <span>Scroll to explore projects</span>
-                  <span class="text-[#dfba6b]/80 font-bold">VEXORA</span>
+                <div class="mt-auto pt-1 border-t border-white/5 flex items-center justify-between text-[5px] text-slate-500 font-mono shrink-0">
+                  <span>Scroll to discover archives</span>
+                  <span class="text-[#c084fc] font-bold">VEXORA</span>
                 </div>
               </div>
 
-              <!-- Specular Gloss Overlays -->
-              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.08] pointer-events-none z-10"></div>
+              <!-- Reflection Glare Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.05] pointer-events-none z-10"></div>
             </div>
             <!-- Details -->
             <div class="p-6 flex-grow flex flex-col justify-between text-left">
               <div>
-                <h3 class="text-xl font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Portfolio Website</h3>
-                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
-                  Interactive modern grids, smooth scrolling hooks, subtle enter layouts, and a clean minimalist resume outline.
+                <h3 class="text-lg font-bold font-['Space_Grotesk'] text-[var(--text-primary)] mb-2">Portfolio Website</h3>
+                <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Multi-dimensional bento boxes, dynamic scrolling parallax animations, seamless resume compilation, and contact hooks.
                 </p>
               </div>
               <div class="flex items-center justify-between pt-4 border-t border-[var(--card-border)]">
-                <span class="text-xs text-[var(--text-secondary)] font-medium">Personal Brand</span>
+                <span class="text-xs text-[var(--text-secondary)] font-medium">Bespoke Identity</span>
                 <span class="portfolio-demo-btn text-xs text-[var(--accent-color)] font-bold group-hover:underline flex items-center gap-1 cursor-pointer" data-demo-title="Portfolio Website" data-demo-url="">
-                  View Live Demo ↗
+                  View Demo ↗
                 </span>
               </div>
             </div>
